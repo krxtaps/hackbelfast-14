@@ -8,7 +8,7 @@ import "@syncfusion/ej2-popups/styles/material.css";
 import App from "./App";
 import "./App.css";
 
-registerLicense("REPLACE_WITH_YOUR_SYNCFUSION_LICENSE_KEY");
+registerLicense("Ngo9BigBOggjHTQxAR8/V1NDaF1cWGhIfEx1RHxQdld5ZFRHallYTnNWUj0eQnxTdENjXX1bcXRURmRaUkN2X0lfZA==");
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
