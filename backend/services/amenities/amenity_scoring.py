@@ -87,6 +87,7 @@ def _load_safe_sanctuaries() -> List[Dict[str, Any]]:
                 elif "taxi" in fsq_cat or "ambulance" in fsq_cat: internal_type = "emergency"
                 
                 combined.append({
+                    "sanctuary_id": row.external_id,
                     "name": row.name,
                     "type": internal_type,
                     "lat": float(row.lat),
