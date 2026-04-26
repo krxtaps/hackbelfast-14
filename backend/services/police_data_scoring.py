@@ -1,6 +1,9 @@
 import httpx
 from typing import Dict, Any, List, Tuple
 from collections import Counter
+from services.geo import haversine_m
+
+POLICE_RADIUS_M = 150.0  # Limit crime influence to 150m walking radius
 
 # No longer needed here, moved to safety_engine.py
 
@@ -28,13 +31,21 @@ async def fetch_nearby_crimes(lat: float, lng: float) -> List[Dict[str, Any]]:
     async with httpx.AsyncClient(timeout=10.0) as client:
         try:
             response = await client.get(url)
-            response.raise_for_status()
-            return response.json()
-        except httpx.RequestError as exc:
-            print(f"An error occurred while requesting {exc.request.url!r}.")
+            if response.status_code == 200:
+                raw_crimes = response.json()
+                # Filter by distance locally
+                filtered_crimes = []
+                for crime in raw_crimes:
+                    c_lat = float(crime.get("location", {}).get("latitude", 0))
+                    c_lng = float(crime.get("location", {}).get("longitude", 0))
+                    if c_lat == 0 or c_lng == 0: continue
+                    
+                    if haversine_m(lat, lng, c_lat, c_lng) <= POLICE_RADIUS_M:
+                        filtered_crimes.append(crime)
+                return filtered_crimes
             return []
-        except httpx.HTTPStatusError as exc:
-            print(f"Error response {exc.response.status_code} while requesting {exc.request.url!r}.")
+        except Exception as e:
+            print(f"Error fetching crime data: {e}")
             return []
 
 

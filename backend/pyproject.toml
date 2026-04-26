@@ -8,6 +8,10 @@ dependencies = [
     "fastapi>=0.136.1",
     "httpx>=0.28.1",
     "polars>=1.40.1",
+    "pyarrow>=16.0.0",
+    "pyiceberg>=0.8.0",
+    "python-dotenv>=1.0.1",
     "sqlmodel>=0.0.38",
     "uvicorn[standard]>=0.46.0",
+    "watchdog>=6.0.0",
 ]

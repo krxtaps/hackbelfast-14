@@ -1,0 +1,3422 @@
+[
+  {
+    "name": "Helen's",
+    "category": "bakery",
+    "source": "osm_overpass",
+    "external_id": "node:2096353580",
+    "lat": 54.5846237,
+    "lng": -5.9224051,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Europa Hotel Lobby Bar",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:11772660213",
+    "lat": 54.5948737,
+    "lng": -5.9349664,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Liquor xXx",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:13103235261",
+    "lat": 54.5917702,
+    "lng": -5.9327834,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Lower Falls Social and Recreation Club",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:13191653086",
+    "lat": 54.5953545,
+    "lng": -5.9498652,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Northern Lights",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:3221119604",
+    "lat": 54.575561,
+    "lng": -5.9173487,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Northern Lights",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "way:1184059196",
+    "lat": 54.5764808,
+    "lng": -5.9180704,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Sweet Afton Bar and Kitchen",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:5883302385",
+    "lat": 54.5952384,
+    "lng": -5.9328398,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Boneyard",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:9979619586",
+    "lat": 54.5932643,
+    "lng": -5.931578,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Boneyard",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "way:533780746",
+    "lat": 54.5933984,
+    "lng": -5.931868,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Linen Hall Bar",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "way:543797828",
+    "lat": 54.5938165,
+    "lng": -5.9314746,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Marcus Ward",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "way:256661259",
+    "lat": 54.5921741,
+    "lng": -5.9308591,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Parlour Bar",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "way:256578009",
+    "lat": 54.5842138,
+    "lng": -5.9379929,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Perch Rooftop Bar",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:4385115358",
+    "lat": 54.5949951,
+    "lng": -5.9324699,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Union Bar",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:13191077469",
+    "lat": 54.5847534,
+    "lng": -5.9374776,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Woodworkers",
+    "category": "bar",
+    "source": "osm_overpass",
+    "external_id": "node:1474043729",
+    "lat": 54.5889094,
+    "lng": -5.9345082,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "A Nice Sip",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:12362546991",
+    "lat": 54.5826568,
+    "lng": -5.9365777,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Aleksandar's Bakery",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1450326117",
+    "lat": 54.5848726,
+    "lng": -5.9292252,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bankmore Deli",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5218450321",
+    "lat": 54.5917758,
+    "lng": -5.9322306,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Blue Train Café & Depot",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13247591601",
+    "lat": 54.5862913,
+    "lng": -5.9315688,
+    "opening_hours": "Mo-Th 08:30-16:00; Fr 08:30-15:00; Sa 10:00-16:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bob & Berts",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5179965778",
+    "lat": 54.5797059,
+    "lng": -5.9347332,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Boden Park Coffee Co.",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4038588710",
+    "lat": 54.5794761,
+    "lng": -5.92016,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Cafe Arirang",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:611157912",
+    "lat": 54.5887974,
+    "lng": -5.9330773,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Cafe Grand Dame",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:2624732162",
+    "lat": 54.5945541,
+    "lng": -5.9309028,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Caffè Nero",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:1192112125",
+    "lat": 54.5779135,
+    "lng": -5.9191011,
+    "opening_hours": "Mo-Fr 06:30-19:00; Sa-Su 07:00-19:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Caffè Nero",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:12408165651",
+    "lat": 54.5829346,
+    "lng": -5.9459639,
+    "opening_hours": "Mo-Su 07:00-19:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Caffè Nero",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:11309553951",
+    "lat": 54.5860602,
+    "lng": -5.936285,
+    "opening_hours": "Mo-Su 07:00-19:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Caffè Nero",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:611906947",
+    "lat": 54.588329,
+    "lng": -5.9328791,
+    "opening_hours": "Mo-Fr 07:00-21:00; Sa 07:00-20:00; Su 08:00-20:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Caffè Nero",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:7060790485",
+    "lat": 54.5924364,
+    "lng": -5.9266764,
+    "opening_hours": "Mo-Fr 07:00-18:30; Sa-Su 08:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Caffè Nero",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:11702139596",
+    "lat": 54.5944188,
+    "lng": -5.934753,
+    "opening_hours": "Mo-Fr 06:30-21:00; Sa 06:30-20:00; Su 07:00-20:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Café L",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:2096354982",
+    "lat": 54.584787,
+    "lng": -5.9224748,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Causeway Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5875477685",
+    "lat": 54.5892652,
+    "lng": -5.9356037,
+    "opening_hours": "Mo-Su,PH 07:55-14:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Clements",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1450326129",
+    "lat": 54.5806899,
+    "lng": -5.9297196,
+    "opening_hours": "Mo-Fr 08:00-15:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Clements Coffee",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:2918485350",
+    "lat": 54.5857606,
+    "lng": -5.9427493,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "CoCo Fresh Tea & Juice",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5260533644",
+    "lat": 54.5953991,
+    "lng": -5.9300605,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Conor",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1450326156",
+    "lat": 54.5824597,
+    "lng": -5.9365074,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Coop coffee co",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:12639080120",
+    "lat": 54.582501,
+    "lng": -5.9181929,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "District Coffee",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4038588663",
+    "lat": 54.5764873,
+    "lng": -5.9174331,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "French Village Bakery & Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1301173918",
+    "lat": 54.5862829,
+    "lng": -5.9324731,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Gong Cha",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1301163135",
+    "lat": 54.5874251,
+    "lng": -5.9324723,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Graffitti Cafe & Bistro",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:492644787",
+    "lat": 54.5776336,
+    "lng": -5.9182719,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Harry's at 387",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:1184059182",
+    "lat": 54.5774986,
+    "lng": -5.9188159,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Heyboba",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13147025278",
+    "lat": 54.5862978,
+    "lng": -5.9317412,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Hope",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1255369618",
+    "lat": 54.5839634,
+    "lng": -5.9321569,
+    "opening_hours": "Mo-Th 08:30-16:00; Fr 08:30-15:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Hubflow",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:12526060007",
+    "lat": 54.5913153,
+    "lng": -5.9331864,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Iho",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:3873220558",
+    "lat": 54.5823695,
+    "lng": -5.9364442,
+    "opening_hours": "Mo-Sa 08:30-17:30; Su off",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Junction",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:1450326115",
+    "lat": 54.5849732,
+    "lng": -5.9337895,
+    "opening_hours": "Mo-Fr 08:00-15:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Kaffe O",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4038588668",
+    "lat": 54.57679,
+    "lng": -5.9182068,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Kaffe O",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4401023807",
+    "lat": 54.5871552,
+    "lng": -5.9328238,
+    "opening_hours": "Mo-Fr 07:00-22:00; Sa 08:30-22:00; Su 09:00-22:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Maggie May's",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:2918523130",
+    "lat": 54.5828604,
+    "lng": -5.9367366,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Mosaic Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13191168949",
+    "lat": 54.586023,
+    "lng": -5.9357616,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "PHIN",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13744469094",
+    "lat": 54.5764902,
+    "lng": -5.9174821,
+    "opening_hours": "Mo-Fr 09:00-17:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "PoppoGoblin",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:7062911005",
+    "lat": 54.5939578,
+    "lng": -5.9273594,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Pronto Deli",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4630735298",
+    "lat": 54.5918038,
+    "lng": -5.9322091,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Reboot Gaming Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:6328938287",
+    "lat": 54.5851016,
+    "lng": -5.94101,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Root + Branch",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4038588651",
+    "lat": 54.575747,
+    "lng": -5.9169566,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Shisha Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13625655085",
+    "lat": 54.5888245,
+    "lng": -5.9336108,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Snax in the City",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5260533645",
+    "lat": 54.5951241,
+    "lng": -5.9301393,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Snazberry Frozen Yogurt",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4038588692",
+    "lat": 54.5780711,
+    "lng": -5.9185542,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Sojourn Coffee Belfast",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:6282849826",
+    "lat": 54.5845136,
+    "lng": -5.9383043,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Soul Food Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:4038588646",
+    "lat": 54.5753643,
+    "lng": -5.9172809,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Soul Food Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:1184059187",
+    "lat": 54.5773405,
+    "lng": -5.9186907,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Starbucks",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:12178087286",
+    "lat": 54.5941786,
+    "lng": -5.9402315,
+    "opening_hours": "closed",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Starbucks",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5939213785",
+    "lat": 54.5951625,
+    "lng": -5.9282196,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Starbucks",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5939213787",
+    "lat": 54.5951677,
+    "lng": -5.9342777,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Starbucks",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:12524591251",
+    "lat": 54.595435,
+    "lng": -5.9174284,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Taste Deli",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13077950490",
+    "lat": 54.595333,
+    "lng": -5.9300537,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Butterfly Cafe",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13180325812",
+    "lat": 54.5882322,
+    "lng": -5.9350452,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Hub Café",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:6328777198",
+    "lat": 54.5844687,
+    "lng": -5.9389996,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Vestry",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:5230387729",
+    "lat": 54.5837175,
+    "lng": -5.9445034,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Toc Toc",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "node:13180304651",
+    "lat": 54.5814404,
+    "lng": -5.9481656,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Town Square",
+    "category": "cafe",
+    "source": "osm_overpass",
+    "external_id": "way:613157871",
+    "lat": 54.5881294,
+    "lng": -5.9333747,
+    "opening_hours": "Mo-Th 10:00-01:00; Fr-Sa 10:00-02:00; Su 10:00-01:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Belfast Chiropractic Clinic",
+    "category": "clinic",
+    "source": "osm_overpass",
+    "external_id": "node:4038588696",
+    "lat": 54.5783871,
+    "lng": -5.9187138,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bradbury Health and Wellbeing Centre",
+    "category": "clinic",
+    "source": "osm_overpass",
+    "external_id": "way:403197120",
+    "lat": 54.5878597,
+    "lng": -5.9377776,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Department of Clinical Health Psychology",
+    "category": "clinic",
+    "source": "osm_overpass",
+    "external_id": "node:5640548875",
+    "lat": 54.586016,
+    "lng": -5.9406452,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Emerald Urgent Care",
+    "category": "clinic",
+    "source": "osm_overpass",
+    "external_id": "node:13153228480",
+    "lat": 54.5916951,
+    "lng": -5.9345911,
+    "opening_hours": "Mo-Su 08:00-20:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Fitzwilliam Clinic",
+    "category": "clinic",
+    "source": "osm_overpass",
+    "external_id": "node:4055699606",
+    "lat": 54.5858724,
+    "lng": -5.9399775,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "B.D. Garments",
+    "category": "clothes",
+    "source": "osm_overpass",
+    "external_id": "way:595950655",
+    "lat": 54.5896977,
+    "lng": -5.9368003,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Cahill's Truly Fare",
+    "category": "clothes",
+    "source": "osm_overpass",
+    "external_id": "node:4038588678",
+    "lat": 54.5772426,
+    "lng": -5.9185101,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Harris Kilt Company",
+    "category": "clothes",
+    "source": "osm_overpass",
+    "external_id": "node:11920014029",
+    "lat": 54.5903534,
+    "lng": -5.936631,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "K S D Kells",
+    "category": "clothes",
+    "source": "osm_overpass",
+    "external_id": "node:13106057384",
+    "lat": 54.5950473,
+    "lng": -5.9311798,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Ten Foundations",
+    "category": "clothes",
+    "source": "osm_overpass",
+    "external_id": "node:3486747635",
+    "lat": 54.5805929,
+    "lng": -5.9493434,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Truly Fare",
+    "category": "clothes",
+    "source": "osm_overpass",
+    "external_id": "node:4038588641",
+    "lat": 54.5751477,
+    "lng": -5.9169448,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Belfast Metropolitan College",
+    "category": "college",
+    "source": "osm_overpass",
+    "external_id": "relation:8650336",
+    "lat": 54.592248,
+    "lng": -5.9299501,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Edgehill Theological College",
+    "category": "college",
+    "source": "osm_overpass",
+    "external_id": "way:10512095",
+    "lat": 54.5775623,
+    "lng": -5.9377064,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Campbell's Shop",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:11309756299",
+    "lat": 54.594368,
+    "lng": -5.9310174,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Centra",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:1204944773",
+    "lat": 54.5788348,
+    "lng": -5.9197945,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Centra",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:5181111875",
+    "lat": 54.5792044,
+    "lng": -5.9344055,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Centra",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:5181111843",
+    "lat": 54.5806949,
+    "lng": -5.9382026,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Centra",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1945514932",
+    "lat": 54.5837656,
+    "lng": -5.9442858,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Centra",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1301156036",
+    "lat": 54.5876681,
+    "lng": -5.9328071,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Centra",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:5926592986",
+    "lat": 54.5956485,
+    "lng": -5.9343011,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Co-op Food",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1945401669",
+    "lat": 54.5824405,
+    "lng": -5.9467574,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Karolina Shop",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:4038588709",
+    "lat": 54.5794062,
+    "lng": -5.9201046,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "M&S Food",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:12178044189",
+    "lat": 54.5947976,
+    "lng": -5.9393828,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Mace",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:604230193",
+    "lat": 54.5758381,
+    "lng": -5.9177064,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Mace",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:5732807672",
+    "lat": 54.5834765,
+    "lng": -5.9371617,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Mace Express",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:508080564",
+    "lat": 54.5906282,
+    "lng": -5.9231436,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "McMillan's OneStop Shop",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:4038588665",
+    "lat": 54.5764839,
+    "lng": -5.9179412,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Mr Spice",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1121758407",
+    "lat": 54.5900116,
+    "lng": -5.936503,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Russell's Food and Drink",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:1272109261",
+    "lat": 54.5918266,
+    "lng": -5.936348,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Russell's Shop 4 You",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1301164961",
+    "lat": 54.5873455,
+    "lng": -5.9324328,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:894716260",
+    "lat": 54.5759738,
+    "lng": -5.9235439,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:611902130",
+    "lat": 54.5770922,
+    "lng": -5.9417444,
+    "opening_hours": "Mo-Su 00:00-23:59+",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1843126827",
+    "lat": 54.5846143,
+    "lng": -5.9287432,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:12300889800",
+    "lat": 54.5847391,
+    "lng": -5.9371953,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:13155514340",
+    "lat": 54.5849491,
+    "lng": -5.9224895,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:1945450932",
+    "lat": 54.5883927,
+    "lng": -5.9356437,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:611906944",
+    "lat": 54.588476,
+    "lng": -5.9329315,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Spar",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:631737823",
+    "lat": 54.5951076,
+    "lng": -5.9342079,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Tesco Express",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:4038588707",
+    "lat": 54.5791839,
+    "lng": -5.9199366,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Tesco Express",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:1314251921",
+    "lat": 54.5866563,
+    "lng": -5.9355059,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Tesco Express",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "way:256661314",
+    "lat": 54.5910503,
+    "lng": -5.9327046,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Tesco Express",
+    "category": "convenience",
+    "source": "osm_overpass",
+    "external_id": "node:9392236005",
+    "lat": 54.595232,
+    "lng": -5.9342856,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Dunluce Health Centre",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "node:5160946622",
+    "lat": 54.5850537,
+    "lng": -5.9421475,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Dunville Surgery",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "node:13192299109",
+    "lat": 54.5953605,
+    "lng": -5.9515351,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Grosvenor Road Surgery",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "node:13191653087",
+    "lat": 54.5948776,
+    "lng": -5.9507836,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Grosvenor Road Surgery",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "way:397960977",
+    "lat": 54.5948945,
+    "lng": -5.9507785,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Kensington Medical Centre",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "way:595950625",
+    "lat": 54.5897113,
+    "lng": -5.9355144,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Kings Bridge Private Hospital",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "node:4055699594",
+    "lat": 54.5876536,
+    "lng": -5.9369519,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Ormeau Park Surgery",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "node:4038588734",
+    "lat": 54.5806988,
+    "lng": -5.9210971,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Sandy Row Medical Centre",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "way:306034594",
+    "lat": 54.5905324,
+    "lng": -5.936676,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "The University Health Centre at Queen's",
+    "category": "doctors",
+    "source": "osm_overpass",
+    "external_id": "node:13248148647",
+    "lat": 54.5839182,
+    "lng": -5.9375049,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Ali Baba",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:3751455096",
+    "lat": 54.5883529,
+    "lng": -5.9349482,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bithika",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:1945514788",
+    "lat": 54.5837936,
+    "lng": -5.9442268,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Boojum",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:1301249403",
+    "lat": 54.587278,
+    "lng": -5.9328132,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Boojum",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5926611986",
+    "lat": 54.5953571,
+    "lng": -5.9342899,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Deano's Street Kitchen",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:3751455095",
+    "lat": 54.5883129,
+    "lng": -5.934977,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Domino's",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:1945452340",
+    "lat": 54.5877919,
+    "lng": -5.9365744,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Falafel cuisine",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5874320185",
+    "lat": 54.5886666,
+    "lng": -5.9335148,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Four Star Pizza",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:1945401310",
+    "lat": 54.5822314,
+    "lng": -5.9469921,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Frango",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:13151009068",
+    "lat": 54.588689,
+    "lng": -5.9351298,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Giacomo's",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5181111864",
+    "lat": 54.5807519,
+    "lng": -5.9381542,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Golden Harvest",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:4038588671",
+    "lat": 54.5769606,
+    "lng": -5.9183248,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Greggs",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:13254633294",
+    "lat": 54.5877613,
+    "lng": -5.9327015,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Gucci Chip",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5888599293",
+    "lat": 54.583834,
+    "lng": -5.9441464,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Juice Jar",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:3873220562",
+    "lat": 54.5867983,
+    "lng": -5.9322025,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "KFC",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:364180383",
+    "lat": 54.5893443,
+    "lng": -5.9347094,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Kings",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:2048688274",
+    "lat": 54.5787712,
+    "lng": -5.9196301,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Lagan Palace",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:657013868",
+    "lat": 54.5854061,
+    "lng": -5.9226999,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Little Italy",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:4429446993",
+    "lat": 54.5946778,
+    "lng": -5.9337477,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Mick Conlon’s",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:13508878609",
+    "lat": 54.5954938,
+    "lng": -5.9484267,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Monte Carlo",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:1945514477",
+    "lat": 54.5834408,
+    "lng": -5.9447874,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "New China",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:492644789",
+    "lat": 54.5778053,
+    "lng": -5.9183819,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Pizza Hut Delivery",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:4038588648",
+    "lat": 54.5754399,
+    "lng": -5.9172038,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Pizza The Action",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:1184059185",
+    "lat": 54.577423,
+    "lng": -5.9187416,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Pret A Manger",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:12178044190",
+    "lat": 54.594678,
+    "lng": -5.9395022,
+    "opening_hours": "closed",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Sandwich Station",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:12194480263",
+    "lat": 54.5951879,
+    "lng": -5.9342796,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Shakes n' Bakes",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:1298513924",
+    "lat": 54.5889952,
+    "lng": -5.941852,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Silver Boat",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:12177113629",
+    "lat": 54.5923487,
+    "lng": -5.9363425,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Spice Pot",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:492808332",
+    "lat": 54.5771269,
+    "lng": -5.9179149,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Subway",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:4038588642",
+    "lat": 54.5751901,
+    "lng": -5.9169724,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Subway",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5181111865",
+    "lat": 54.5793953,
+    "lng": -5.9350153,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Subway",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5103751221",
+    "lat": 54.5835637,
+    "lng": -5.9445604,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Subway",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:576874903",
+    "lat": 54.5874863,
+    "lng": -5.9324977,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Subway",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:256661295",
+    "lat": 54.5916608,
+    "lng": -5.9329488,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Subway",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5926592985",
+    "lat": 54.5955368,
+    "lng": -5.9343014,
+    "opening_hours": "Mo-Fr 08:00-20:00; Sa 09:00-20:00; Su 09:30-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Sunshine",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:492808331",
+    "lat": 54.5770487,
+    "lng": -5.9178875,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Hungry Hound 2",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:4038588670",
+    "lat": 54.5769205,
+    "lng": -5.9182991,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Naz",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:1184059186",
+    "lat": 54.5773815,
+    "lng": -5.9187142,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Pizza Co.",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:717778919",
+    "lat": 54.5878517,
+    "lng": -5.9332004,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Supreme Carryout",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:11822000588",
+    "lat": 54.592214,
+    "lng": -5.9364017,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Together",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:13284018345",
+    "lat": 54.5842434,
+    "lng": -5.9222867,
+    "opening_hours": "16:30-03:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Tung Sun",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:4038588731",
+    "lat": 54.5803859,
+    "lng": -5.9208579,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Turkey Street Food",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "way:1264978080",
+    "lat": 54.591716,
+    "lng": -5.9332154,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Umi Falafel",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:5234878119",
+    "lat": 54.5863791,
+    "lng": -5.9320142,
+    "opening_hours": "Mo-Su 12:00-21:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Upper Crust",
+    "category": "fast_food",
+    "source": "osm_overpass",
+    "external_id": "node:3393259093",
+    "lat": 54.5951797,
+    "lng": -5.9170442,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Hench",
+    "category": "gym",
+    "source": "osm_overpass",
+    "external_id": "node:11309787546",
+    "lat": 54.5956863,
+    "lng": -5.9235756,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "PureGym",
+    "category": "gym",
+    "source": "osm_overpass",
+    "external_id": "node:7062910989",
+    "lat": 54.5938998,
+    "lng": -5.9280739,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Belfast City Hospital",
+    "category": "hospital",
+    "source": "osm_overpass",
+    "external_id": "way:323634415",
+    "lat": 54.587348,
+    "lng": -5.9443858,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Belfast International Youth Hostel",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "node:5678599936",
+    "lat": 54.5892426,
+    "lng": -5.9357936,
+    "opening_hours": "24/7",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Botanical Backpackers",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "node:579036326",
+    "lat": 54.5859556,
+    "lng": -5.9390596,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839798",
+    "lat": 54.5859511,
+    "lng": -5.9296895,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839796",
+    "lat": 54.5860221,
+    "lng": -5.9295021,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839795",
+    "lat": 54.5860232,
+    "lng": -5.9294099,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839797",
+    "lat": 54.586046,
+    "lng": -5.9295962,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839794",
+    "lat": 54.5860495,
+    "lng": -5.9293167,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839793",
+    "lat": 54.5860507,
+    "lng": -5.9292235,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839792",
+    "lat": 54.5860519,
+    "lng": -5.9291303,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Global Village",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "way:1244839791",
+    "lat": 54.586053,
+    "lng": -5.929037,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Lagan Backpackers",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "node:3661022027",
+    "lat": 54.5853633,
+    "lng": -5.9299083,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Paddy's Palace Belfast",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "node:579036307",
+    "lat": 54.5858887,
+    "lng": -5.9397757,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Vagabonds Belfast Hostel",
+    "category": "hostel",
+    "source": "osm_overpass",
+    "external_id": "node:4388230605",
+    "lat": 54.5874377,
+    "lng": -5.9360214,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Benedicts of Belfast",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:364180384",
+    "lat": 54.5891055,
+    "lng": -5.9350032,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Clayton Hotel Belfast",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "relation:3136795",
+    "lat": 54.5928292,
+    "lng": -5.9305557,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Cordia Serviced Apartments",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "node:361459239",
+    "lat": 54.5804579,
+    "lng": -5.9494919,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "DoubleTree by Hilton Belfast City Ten Square",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:1423027085",
+    "lat": 54.5955537,
+    "lng": -5.9303734,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Dukes at Queens",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:305578301",
+    "lat": 54.5859196,
+    "lng": -5.9318805,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "ETAP Hotel Belfast",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:306034575",
+    "lat": 54.5921022,
+    "lng": -5.9328539,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Europa Hotel",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:329332000",
+    "lat": 54.5948104,
+    "lng": -5.9351279,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Fitzwilliam Hotel",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:488274001",
+    "lat": 54.5956011,
+    "lng": -5.9353357,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Grand Central Hotel",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:1494033061",
+    "lat": 54.595172,
+    "lng": -5.9319002,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Hampton by Hilton Belfast City Centre",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:440735711",
+    "lat": 54.5936487,
+    "lng": -5.9353657,
+    "opening_hours": "24/7",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Holiday Inn",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:42716301",
+    "lat": 54.5928826,
+    "lng": -5.9359822,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Holiday Inn Express Queen's Quarter",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:141741547",
+    "lat": 54.5865228,
+    "lng": -5.9268728,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Ibis Queen's Quarter",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:158247535",
+    "lat": 54.585887,
+    "lng": -5.9310037,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Madison's Hotel",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "node:1301264081",
+    "lat": 54.5874467,
+    "lng": -5.932979,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Madison's Hotel",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "node:1301278247",
+    "lat": 54.5876078,
+    "lng": -5.9333721,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Maldron Hotel Belfast City",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:549922313",
+    "lat": 54.5946706,
+    "lng": -5.9327197,
+    "opening_hours": "24/7",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Malone Lodge Hotel Belfast",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:668505113",
+    "lat": 54.5817142,
+    "lng": -5.9424658,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Number 11",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:793778689",
+    "lat": 54.581899,
+    "lng": -5.938173,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Park Inn",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:229214476",
+    "lat": 54.5937962,
+    "lng": -5.931989,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Premier Inn",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "node:7062911006",
+    "lat": 54.5936426,
+    "lng": -5.9273408,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Regency House",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "node:12926125086",
+    "lat": 54.5869494,
+    "lng": -5.9341063,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Travelodge - Belfast Central",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "node:4249507889",
+    "lat": 54.5952276,
+    "lng": -5.9333659,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "voco",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:363939710",
+    "lat": 54.5916601,
+    "lng": -5.9232524,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Wellington Park Hotel",
+    "category": "hotel",
+    "source": "osm_overpass",
+    "external_id": "way:357398573",
+    "lat": 54.581284,
+    "lng": -5.9390423,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "name": "Ormeau Road Library",
+    "category": "library",
+    "source": "osm_overpass",
+    "external_id": "way:343884727",
+    "lat": 54.5821306,
+    "lng": -5.9222506,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Alibi",
+    "category": "nightclub",
+    "source": "osm_overpass",
+    "external_id": "way:364180385",
+    "lat": 54.5889331,
+    "lng": -5.9351786,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Foundry",
+    "category": "nightclub",
+    "source": "osm_overpass",
+    "external_id": "way:492283294",
+    "lat": 54.5922126,
+    "lng": -5.9310861,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Limelight",
+    "category": "nightclub",
+    "source": "osm_overpass",
+    "external_id": "way:256651844",
+    "lat": 54.5928635,
+    "lng": -5.9285433,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "A Health Promotion Pharmacy",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "node:4038588735",
+    "lat": 54.5808179,
+    "lng": -5.9211545,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Boots",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "node:5939213786",
+    "lat": 54.5945184,
+    "lng": -5.9348474,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Cowzers Pharmacy",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "node:4038588655",
+    "lat": 54.5759225,
+    "lng": -5.9175447,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Dunluce Health Centre",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "node:534465223",
+    "lat": 54.5850802,
+    "lng": -5.9421231,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Fullerton Pharmacy",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "node:11309787547",
+    "lat": 54.5956321,
+    "lng": -5.9215287,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Gordons Chemists",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "way:1237730823",
+    "lat": 54.5898658,
+    "lng": -5.9363371,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "J McGregor Pharmacy",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "way:611157911",
+    "lat": 54.5888386,
+    "lng": -5.9330989,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Oriel Pharmacy",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "way:1204944777",
+    "lat": 54.5783668,
+    "lng": -5.9194444,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Pharmacy Plus",
+    "category": "pharmacy",
+    "source": "osm_overpass",
+    "external_id": "node:5181111861",
+    "lat": 54.5795111,
+    "lng": -5.9346029,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "name": "Brennan's",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:469621095",
+    "lat": 54.5945076,
+    "lng": -5.9341466,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "BrewDog",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:13341175550",
+    "lat": 54.5943965,
+    "lng": -5.9400319,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Cuckoo",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:3487748987",
+    "lat": 54.5833366,
+    "lng": -5.9451506,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Fibber Magee's",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:4385115385",
+    "lat": 54.5948019,
+    "lng": -5.9336749,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Happy's",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:1158160216",
+    "lat": 54.5833461,
+    "lng": -5.9452054,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Hatfield House",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:9323621382",
+    "lat": 54.585661,
+    "lng": -5.9228084,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Katy's Bar",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:450146570",
+    "lat": 54.5928531,
+    "lng": -5.928684,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Lavery's Bar",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:1301116351",
+    "lat": 54.5890182,
+    "lng": -5.9343848,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Post House",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:540687708",
+    "lat": 54.5808506,
+    "lng": -5.9379999,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Robinson's",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:440735703",
+    "lat": 54.5948269,
+    "lng": -5.9339585,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "Ryan's",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:1945515195",
+    "lat": 54.5837143,
+    "lng": -5.9435643,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Belfast Empire Music Hall",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:480852126",
+    "lat": 54.5881868,
+    "lng": -5.9326758,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Botanic Inn",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:540687704",
+    "lat": 54.5809988,
+    "lng": -5.9385887,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Bridge House",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:475034730",
+    "lat": 54.5930011,
+    "lng": -5.9319094,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Crown Liquor Saloon",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:440735700",
+    "lat": 54.5947027,
+    "lng": -5.934065,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Errigle Inn",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:492644797",
+    "lat": 54.5760157,
+    "lng": -5.9170188,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Hideout",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:305065532",
+    "lat": 54.5900699,
+    "lng": -5.9273719,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Jeggy Nettle",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:793779219",
+    "lat": 54.5810544,
+    "lng": -5.9353314,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Loft",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:13077950491",
+    "lat": 54.5955701,
+    "lng": -5.9301416,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Pavilion Bar",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:493366329",
+    "lat": 54.5765902,
+    "lng": -5.9174092,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Points",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "node:469621096",
+    "lat": 54.5915494,
+    "lng": -5.9324222,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Rose & Crown",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:657013866",
+    "lat": 54.5853012,
+    "lng": -5.9226605,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "The Royal",
+    "category": "pub",
+    "source": "osm_overpass",
+    "external_id": "way:595950626",
+    "lat": 54.589425,
+    "lng": -5.9361973,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "name": "3 levels-Asian Fusion",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:579036440",
+    "lat": 54.5866178,
+    "lng": -5.9361281,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "A Peculiar Tea",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:11309553953",
+    "lat": 54.5859685,
+    "lng": -5.9357646,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Abacus",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5181111842",
+    "lat": 54.580359,
+    "lng": -5.9390167,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Actons",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:12013021460",
+    "lat": 54.5951029,
+    "lng": -5.9331761,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Aleksandars bakery",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1450326172",
+    "lat": 54.5813141,
+    "lng": -5.9362124,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Ambrosia",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4038588652",
+    "lat": 54.575723,
+    "lng": -5.9174292,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Amelia Hall",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:6815757288",
+    "lat": 54.5957029,
+    "lng": -5.9334585,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Archana",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:954085842",
+    "lat": 54.5916163,
+    "lng": -5.9329831,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "BaoBun",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:815479169",
+    "lat": 54.5878861,
+    "lng": -5.9326412,
+    "opening_hours": "Mo-Su 12:00-22:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Belfast Bay",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:6502222303",
+    "lat": 54.5815869,
+    "lng": -5.9479818,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bengal Brasserie",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4038588644",
+    "lat": 54.575323,
+    "lng": -5.917182,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bia Rebel",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:1184059176",
+    "lat": 54.5768227,
+    "lng": -5.9182743,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bites of India",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:611308546",
+    "lat": 54.5890765,
+    "lng": -5.9337583,
+    "opening_hours": "Mo-Sa 11:00-23:00; Su 13:00-22:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bo Tree",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:657013886",
+    "lat": 54.5846333,
+    "lng": -5.928327,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Botanic Spice",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:508040371",
+    "lat": 54.5875415,
+    "lng": -5.9323383,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Bunsen",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4401015315",
+    "lat": 54.5872635,
+    "lng": -5.9324026,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Céigo Asian Fusion",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13508878604",
+    "lat": 54.5955052,
+    "lng": -5.9480817,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Darcy's",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:1271207046",
+    "lat": 54.5890811,
+    "lng": -5.9343023,
+    "opening_hours": "Mo-Th 16:00-21:30; Fr-Su 13:00-21:30",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Deane's at Queens",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1450326168",
+    "lat": 54.5835892,
+    "lng": -5.93768,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Deane's Deli",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13106057386",
+    "lat": 54.5942176,
+    "lng": -5.9310066,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Faan Hup",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13149463548",
+    "lat": 54.5869955,
+    "lng": -5.9327391,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "FireStone",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13153292529",
+    "lat": 54.5897221,
+    "lng": -5.934533,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Foodies",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:560171856",
+    "lat": 54.5806586,
+    "lng": -5.9491602,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Fratelli",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13089289637",
+    "lat": 54.5939883,
+    "lng": -5.9341272,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "French Village",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:11309491507",
+    "lat": 54.5808837,
+    "lng": -5.94894,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Gangnan",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5181111855",
+    "lat": 54.5795846,
+    "lng": -5.9346534,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Gaze",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4038588666",
+    "lat": 54.5766283,
+    "lng": -5.9181054,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Giuseppes Pizza",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:12194050968",
+    "lat": 54.5806318,
+    "lng": -5.9382549,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Grain & Grill Bar & Restaurant",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5590323198",
+    "lat": 54.5947308,
+    "lng": -5.9326747,
+    "opening_hours": "Mo-Fr 07:00-21:30, Sa-Su 12:00-21:30",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Greenhouse",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5883373486",
+    "lat": 54.5953672,
+    "lng": -5.930735,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Happy Yemen",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:441060224",
+    "lat": 54.5877013,
+    "lng": -5.9360161,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Harlem Cafe",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:2624731554",
+    "lat": 54.5944495,
+    "lng": -5.9310106,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Holohan's Pantry",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:11309553952",
+    "lat": 54.5861202,
+    "lng": -5.9362588,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "India Gate",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13300979266",
+    "lat": 54.5923239,
+    "lng": -5.9343815,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "India Gate",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13106080466",
+    "lat": 54.5923295,
+    "lng": -5.9343366,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "James St",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:6549974985",
+    "lat": 54.595401,
+    "lng": -5.932817,
+    "opening_hours": "Mo,We,Th 17:00-21:30; Fr,Sa 13:00-21:30; Su 13:00-20:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Kamakura Sushi & Ramen",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13087472501",
+    "lat": 54.5897767,
+    "lng": -5.9306238,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "KUBO",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1233760109",
+    "lat": 54.5943355,
+    "lng": -5.9356179,
+    "opening_hours": "Tu-Sa 12:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Kurrito",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:611157908",
+    "lat": 54.5889344,
+    "lng": -5.9331413,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "L'Etoile du Nord",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:1184059177",
+    "lat": 54.5768643,
+    "lng": -5.9183077,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "La Taqueria",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:492808334",
+    "lat": 54.5772171,
+    "lng": -5.9179834,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Lanting",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:305732290",
+    "lat": 54.5859032,
+    "lng": -5.9354296,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Laylina",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:611308544",
+    "lat": 54.5891466,
+    "lng": -5.9337889,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Lee Garden Restaurant",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:611157900",
+    "lat": 54.5891297,
+    "lng": -5.9332179,
+    "opening_hours": "Mo-Su 12:00-00:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Macau",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4038588737",
+    "lat": 54.5810185,
+    "lng": -5.921279,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Madame Pho",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:611906938",
+    "lat": 54.5888724,
+    "lng": -5.9337064,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Maggie Mays",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:815479170",
+    "lat": 54.5878486,
+    "lng": -5.9326251,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Maggie Mays Belfast Chippy",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4432519989",
+    "lat": 54.5867565,
+    "lng": -5.9355859,
+    "opening_hours": "Mo-Th 11:00-23:00; Fr-Su 10:00-23:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Molly's Yard",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1450326110",
+    "lat": 54.5857091,
+    "lng": -5.9320564,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "MU Barbecue",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1301267994",
+    "lat": 54.58778,
+    "lng": -5.9331273,
+    "opening_hours": "Mo-Tu,Th-Su 12:00-22:00; We off",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Nando's",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4271742611",
+    "lat": 54.5930483,
+    "lng": -5.9311781,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Nico’s",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13438390676",
+    "lat": 54.5860899,
+    "lng": -5.9229412,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Noodz",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:256661279",
+    "lat": 54.5915683,
+    "lng": -5.9330184,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Nu Delhi Lounge",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5325565626",
+    "lat": 54.5931477,
+    "lng": -5.9340052,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "PizzaExpress",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:11309756301",
+    "lat": 54.5936292,
+    "lng": -5.9313791,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Poké Shack",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1301171319",
+    "lat": 54.5868923,
+    "lng": -5.9322462,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "RBG Bar & Grill",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:3171899354",
+    "lat": 54.593924,
+    "lng": -5.9321537,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Red Panda",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:3751455097",
+    "lat": 54.5941142,
+    "lng": -5.9341476,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Saga Restaurant",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13459385401",
+    "lat": 54.5801775,
+    "lng": -5.9391278,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Sakura",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4401016508",
+    "lat": 54.587201,
+    "lng": -5.932376,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Saphyre",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5230387205",
+    "lat": 54.5837793,
+    "lng": -5.9446481,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Scalini",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1301195878",
+    "lat": 54.5868535,
+    "lng": -5.9326793,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Shed",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4038588639",
+    "lat": 54.5750361,
+    "lng": -5.9168631,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Smash N Bird",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:3873220564",
+    "lat": 54.5870102,
+    "lng": -5.932321,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "St James Street South Bar + Grill",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5716117123",
+    "lat": 54.5955206,
+    "lng": -5.931088,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Thai Siam",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13526957361",
+    "lat": 54.586378,
+    "lng": -5.9324775,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Thai Village",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:3834560497",
+    "lat": 54.5914441,
+    "lng": -5.9325237,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Barking Dog",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "way:793778512",
+    "lat": 54.5806926,
+    "lng": -5.9387892,
+    "opening_hours": "Mo-Th 12:00-22:00; Fr-Sa 12:00-23:00; Su 12:00-21:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Chip Company",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:837989375",
+    "lat": 54.5876792,
+    "lng": -5.9326284,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Ginger Bistro",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13150966737",
+    "lat": 54.5932471,
+    "lng": -5.9338272,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Jharna",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:3868982602",
+    "lat": 54.5839668,
+    "lng": -5.9438105,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Teal Monkey",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13089378522",
+    "lat": 54.5907667,
+    "lng": -5.9335346,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "The Wok Oriental",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13153256568",
+    "lat": 54.5901443,
+    "lng": -5.9344718,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "TMC Foods",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13626309676",
+    "lat": 54.588749,
+    "lng": -5.9350898,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Tzatziki",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:5793033562",
+    "lat": 54.5885423,
+    "lng": -5.9334652,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Villa Italia",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:3100157950",
+    "lat": 54.5861811,
+    "lng": -5.9362182,
+    "opening_hours": "Mo-Th 17:00-22:00; Fr 16:00-22:00; Sa 16:00-22:30; Su 12:30-20:30",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Welcome",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:4045654981",
+    "lat": 54.580803,
+    "lng": -5.9352362,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Wok-A-Moley",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:13625673935",
+    "lat": 54.5885171,
+    "lng": -5.9352911,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Yellow Door",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:1450326169",
+    "lat": 54.5824948,
+    "lng": -5.9351517,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Zen",
+    "category": "restaurant",
+    "source": "osm_overpass",
+    "external_id": "node:7060786231",
+    "lat": 54.5938759,
+    "lng": -5.9284649,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Alif Supermarket & Wholesale",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:13283971166",
+    "lat": 54.5901911,
+    "lng": -5.9258834,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Bangla Bazar",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:13526959516",
+    "lat": 54.5844939,
+    "lng": -5.9227893,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Camseng",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "way:341513798",
+    "lat": 54.5816367,
+    "lng": -5.9491249,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Dunnes Stores",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "way:141747886",
+    "lat": 54.5818845,
+    "lng": -5.923196,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Eco Fresh Food",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:12362546990",
+    "lat": 54.5883328,
+    "lng": -5.9334382,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Eurospar",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "way:621452538",
+    "lat": 54.5884272,
+    "lng": -5.9482786,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Istanbul Market Belfast",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:13155443569",
+    "lat": 54.589303,
+    "lng": -5.9338135,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Lee Foods Oriental Supermarket",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:7062914630",
+    "lat": 54.5903084,
+    "lng": -5.9276889,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Markah Supermarket",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:13626336205",
+    "lat": 54.5885716,
+    "lng": -5.9352498,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Spar",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "node:13508878602",
+    "lat": 54.5954149,
+    "lng": -5.9478206,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Tesco",
+    "category": "supermarket",
+    "source": "osm_overpass",
+    "external_id": "way:41917088",
+    "lat": 54.5802592,
+    "lng": -5.9500711,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "name": "Elmwood One (QUB Student union)",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "node:12650210910",
+    "lat": 54.5846599,
+    "lng": -5.9369263,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Health Sciences Campus",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "relation:10458831",
+    "lat": 54.5860151,
+    "lng": -5.9441007,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "QUB School of Psychology",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "node:12650175217",
+    "lat": 54.5811596,
+    "lng": -5.9378378,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Queen's University Belfast",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "relation:5987817",
+    "lat": 54.5805349,
+    "lng": -5.9370776,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Queen's University Belfast",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "relation:9300103",
+    "lat": 54.5825981,
+    "lng": -5.9358304,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Queen's University Sport",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "way:1336456132",
+    "lat": 54.5803896,
+    "lng": -5.9303244,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Riddel Hall",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "way:398510788",
+    "lat": 54.5757132,
+    "lng": -5.935306,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "Union Theological College",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "way:10289248",
+    "lat": 54.5850985,
+    "lng": -5.9314294,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "name": "University square",
+    "category": "university",
+    "source": "osm_overpass",
+    "external_id": "way:398510790",
+    "lat": 54.585672,
+    "lng": -5.9341959,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  }
+]

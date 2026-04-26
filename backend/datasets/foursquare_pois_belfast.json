@@ -1,0 +1,790 @@
+[
+  {
+    "external_id": "ec22694ff2f149eacc99f957",
+    "name": "Michael Dwyers",
+    "category": "Arts and Entertainment > Night Club",
+    "category_ids": [
+      "4bf58dd8d48988d11f941735",
+      "4bf58dd8d48988d116941735"
+    ],
+    "category_labels": [
+      "Arts and Entertainment > Night Club",
+      "Dining and Drinking > Bar"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59496106370233,
+    "lng": -5.950914417867559,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "external_id": "698a648a1d5f3f1a8d2e37e3",
+    "name": "Acrewood Daycare",
+    "category": "Business and Professional Services",
+    "category_ids": [
+      "4d4b7105d754a06375d81259"
+    ],
+    "category_labels": [
+      "Business and Professional Services"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5953957,
+    "lng": -5.951986,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "9cada6ba57d1477fc9ce1dde",
+    "name": "Greater Village Regeneration Trust",
+    "category": "Business and Professional Services",
+    "category_ids": [
+      "4d4b7105d754a06375d81259"
+    ],
+    "category_labels": [
+      "Business and Professional Services"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.588814,
+    "lng": -5.950261,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "5c7d88f90457b7002c7bd505",
+    "name": "P.Q. Auto Services",
+    "category": "Business and Professional Services > Automotive Service > Automotive Repair Shop",
+    "category_ids": [
+      "52f2ab2ebcbc57f1066b8b44"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Automotive Service > Automotive Repair Shop"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59277929016372,
+    "lng": -5.948462356485784,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "69408888b9c5366b7b4d4247",
+    "name": "JK Barbers",
+    "category": "Business and Professional Services > Health and Beauty Service",
+    "category_ids": [
+      "54541900498ea6ccd0202697",
+      "4bf58dd8d48988d1ed941735"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Health and Beauty Service",
+      "Business and Professional Services > Health and Beauty Service > Spa"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5954829,
+    "lng": -5.9482054,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "69408290b9c5366b7b2cdc51",
+    "name": "Karen's Tanning and Beauty Salon",
+    "category": "Business and Professional Services > Health and Beauty Service",
+    "category_ids": [
+      "54541900498ea6ccd0202697",
+      "4d1cf8421a97d635ce361c31",
+      "4bf58dd8d48988d1ed941735"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Health and Beauty Service",
+      "Business and Professional Services > Health and Beauty Service > Tanning Salon",
+      "Business and Professional Services > Health and Beauty Service > Spa"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5954779,
+    "lng": -5.9482961,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "3766a4055a804b98d80197ec",
+    "name": "Beyond Beauty",
+    "category": "Business and Professional Services > Health and Beauty Service > Hair Salon",
+    "category_ids": [
+      "4bf58dd8d48988d110951735"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Health and Beauty Service > Hair Salon"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595354,
+    "lng": -5.94862,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "5ef30cf0b5d245c39af778c4",
+    "name": "Gleasta",
+    "category": "Business and Professional Services > Health and Beauty Service > Hair Salon",
+    "category_ids": [
+      "4bf58dd8d48988d110951735"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Health and Beauty Service > Hair Salon"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59517705416224,
+    "lng": -5.94881676411997,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "762928989e114cbfb171a5d7",
+    "name": "The Hair Lounge",
+    "category": "Business and Professional Services > Health and Beauty Service > Hair Salon",
+    "category_ids": [
+      "4bf58dd8d48988d110951735"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Health and Beauty Service > Hair Salon"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5901894021083,
+    "lng": -5.949895494194421,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "bd9d5bc042964deb06004c31",
+    "name": "Ni Floor Fitters",
+    "category": "Business and Professional Services > Home Improvement Service > Carpet and Flooring Contractor",
+    "category_ids": [
+      "63be6904847c3692a84b9b4e"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Home Improvement Service > Carpet and Flooring Contractor"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59398677885871,
+    "lng": -5.949574383812381,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "f2ef8bf41aca4eed93747c64",
+    "name": "Jack Patterson",
+    "category": "Business and Professional Services > Home Improvement Service > General Contractor",
+    "category_ids": [
+      "63be6904847c3692a84b9b55"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Home Improvement Service > General Contractor"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59071129109591,
+    "lng": -5.948024363178389,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "5e82e5ca31faaa000821100e",
+    "name": "Provident Healthcare NI",
+    "category": "Business and Professional Services > Home Improvement Service > Home Service",
+    "category_ids": [
+      "545419b1498ea6ccd0202f58",
+      "4f4532974b9074f6e4fb0104",
+      "5032891291d4c4b30a586d68"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Home Improvement Service > Home Service",
+      "Business and Professional Services > Child Care Service > Daycare",
+      "Community and Government > Assisted Living"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.58881375522853,
+    "lng": -5.950261068393984,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "131d3f6ccbf44d25e87a3e73",
+    "name": "Fortus Hardware Limited",
+    "category": "Business and Professional Services > Home Improvement Service > Plumber",
+    "category_ids": [
+      "63be6904847c3692a84b9b5f"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Home Improvement Service > Plumber"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.590391,
+    "lng": -5.951465,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "124f008693334acea79b82a6",
+    "name": "George Pennock Photography",
+    "category": "Business and Professional Services > Photography Service",
+    "category_ids": [
+      "63be6904847c3692a84b9b7d"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Photography Service"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.58824272035677,
+    "lng": -5.950675904301016,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "a55684772e5f4dd9e0235913",
+    "name": "Richview Regeneration Centre C.I.C",
+    "category": "Business and Professional Services > Real Estate Service > Property Management Office",
+    "category_ids": [
+      "63be6904847c3692a84b9b86",
+      "5032885091d4c4b30a586d66"
+    ],
+    "category_labels": [
+      "Business and Professional Services > Real Estate Service > Property Management Office",
+      "Business and Professional Services > Real Estate Service > Real Estate Agency"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.58717291498533,
+    "lng": -5.951267781453591,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "59b1233a16fa0461bd76a966",
+    "name": "School's Canteen",
+    "category": "Community and Government > Education > College and University > College Cafeteria",
+    "category_ids": [
+      "4bf58dd8d48988d1a1941735"
+    ],
+    "category_labels": [
+      "Community and Government > Education > College and University > College Cafeteria"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.593057,
+    "lng": -5.951723,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "4ec738060e6158bafe4666d2",
+    "name": "Medical Library",
+    "category": "Community and Government > Education > College and University > College Library",
+    "category_ids": [
+      "4bf58dd8d48988d1a7941735"
+    ],
+    "category_labels": [
+      "Community and Government > Education > College and University > College Library"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.594108172229795,
+    "lng": -5.950792960111737,
+    "opening_hours": "09:00-18:00",
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "bbd9465663014ab066c4b816",
+    "name": "Lower Broadway Post Office",
+    "category": "Community and Government > Government Building > Post Office",
+    "category_ids": [
+      "4bf58dd8d48988d172941735"
+    ],
+    "category_labels": [
+      "Community and Government > Government Building > Post Office"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.588814,
+    "lng": -5.950261,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "bf5588325a464f11ad1124f8",
+    "name": "Reminiscence Network Northern Ireland",
+    "category": "Community and Government > Organization > Charity",
+    "category_ids": [
+      "63be6904847c3692a84b9bab"
+    ],
+    "category_labels": [
+      "Community and Government > Organization > Charity"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.58881375522853,
+    "lng": -5.950261068393984,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "7368bad8439d40dc0ba11067",
+    "name": "Reminiscence Network NI Charitable Organisation",
+    "category": "Community and Government > Organization > Non-Profit Organization",
+    "category_ids": [
+      "50328a8e91d4c4b30a586d6c"
+    ],
+    "category_labels": [
+      "Community and Government > Organization > Non-Profit Organization"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.588814,
+    "lng": -5.950261,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "698a673c1d5f3f1a8d362dee",
+    "name": "St Joseph's Centre for the Deaf",
+    "category": "Community and Government > Public and Social Service",
+    "category_ids": [
+      "63be6904847c3692a84b9bb1"
+    ],
+    "category_labels": [
+      "Community and Government > Public and Social Service"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5953492,
+    "lng": -5.9519543,
+    "opening_hours": "21:00-03:00",
+    "hours_status": "late_night_known"
+  },
+  {
+    "external_id": "de1c022f5f024a95d2405fb9",
+    "name": "Richview Presbyterian Church",
+    "category": "Community and Government > Spiritual Center > Church",
+    "category_ids": [
+      "4bf58dd8d48988d132941735"
+    ],
+    "category_labels": [
+      "Community and Government > Spiritual Center > Church"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.588717,
+    "lng": -5.950117,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "55b75ee8498e2bdb28a14d3f",
+    "name": "Loaf Caf\u00e9 and Bakery",
+    "category": "Dining and Drinking > Cafe, Coffee, and Tea House > Caf\u00e9",
+    "category_ids": [
+      "4bf58dd8d48988d16d941735"
+    ],
+    "category_labels": [
+      "Dining and Drinking > Cafe, Coffee, and Tea House > Caf\u00e9"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59507406373213,
+    "lng": -5.951544229475255,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "06446d4422ef4ba12a17cfc1",
+    "name": "Kings Chip Shop",
+    "category": "Dining and Drinking > Restaurant",
+    "category_ids": [
+      "4d4b7105d754a06374d81259"
+    ],
+    "category_labels": [
+      "Dining and Drinking > Restaurant"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59531360200342,
+    "lng": -5.94844447471077,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "69409417b9c5366b7b8595c9",
+    "name": "Lower Falls Social and Recreation Club",
+    "category": "Dining and Drinking > Restaurant",
+    "category_ids": [
+      "4d4b7105d754a06374d81259",
+      "4d4b7105d754a06375d81259",
+      "4bf58dd8d48988d116941735"
+    ],
+    "category_labels": [
+      "Dining and Drinking > Restaurant",
+      "Business and Professional Services",
+      "Dining and Drinking > Bar"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5952476,
+    "lng": -5.9498045,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "69407fb3b9c5366b7b200767",
+    "name": "Ceigo",
+    "category": "Dining and Drinking > Restaurant > Asian Restaurant > Chinese Restaurant",
+    "category_ids": [
+      "4bf58dd8d48988d145941735"
+    ],
+    "category_labels": [
+      "Dining and Drinking > Restaurant > Asian Restaurant > Chinese Restaurant"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5954524,
+    "lng": -5.9481467,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "69407fbab9c5366b7b20271f",
+    "name": "Mick Conlon Fish & Chips",
+    "category": "Dining and Drinking > Restaurant > Fish and Chips Shop",
+    "category_ids": [
+      "4edd64a0c7ddd24ca188df1a",
+      "4d4b7105d754a06374d81259",
+      "4bf58dd8d48988d147941735"
+    ],
+    "category_labels": [
+      "Dining and Drinking > Restaurant > Fish and Chips Shop",
+      "Dining and Drinking > Restaurant",
+      "Dining and Drinking > Restaurant > Diner"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5955031,
+    "lng": -5.9481754,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "d3ac84dfac6d48603c17baec",
+    "name": "Spice Inn",
+    "category": "Dining and Drinking > Restaurant > Indian Restaurant",
+    "category_ids": [
+      "4bf58dd8d48988d10f941735"
+    ],
+    "category_labels": [
+      "Dining and Drinking > Restaurant > Indian Restaurant"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5901894021083,
+    "lng": -5.949895494194421,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "04d3ff1779c6488cc4d964aa",
+    "name": "McDowell Pharmacy",
+    "category": "Health and Medicine",
+    "category_ids": [
+      "63be6904847c3692a84b9bb9",
+      "5745c2e4498e11e7bccabdbd"
+    ],
+    "category_labels": [
+      "Health and Medicine",
+      "Retail > Drugstore"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.58881375522853,
+    "lng": -5.950261068393984,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "c9035742dc4b42b9f9cd05d9",
+    "name": "Iverna Fold",
+    "category": "Health and Medicine > Assisted Living Service",
+    "category_ids": [
+      "63be6904847c3692a84b9bbb"
+    ],
+    "category_labels": [
+      "Health and Medicine > Assisted Living Service"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.591017,
+    "lng": -5.948251,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "e64dc9c456014e86f98e04e0",
+    "name": "Grosvenor Dental Care",
+    "category": "Health and Medicine > Dentist",
+    "category_ids": [
+      "4bf58dd8d48988d178941735"
+    ],
+    "category_labels": [
+      "Health and Medicine > Dentist"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59550686361114,
+    "lng": -5.948733142392499,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "4eb119f682317685623f9fac",
+    "name": "Broadway Ambulance Station",
+    "category": "Health and Medicine > Emergency Service > Ambulance Service",
+    "category_ids": [
+      "63be6904847c3692a84b9bbd"
+    ],
+    "category_labels": [
+      "Health and Medicine > Emergency Service > Ambulance Service"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59200375362745,
+    "lng": -5.950266619960657,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "external_id": "3a60d7a8f9f1406198183a9f",
+    "name": "Dunville Health Centre",
+    "category": "Health and Medicine > Medical Center",
+    "category_ids": [
+      "4bf58dd8d48988d104941735"
+    ],
+    "category_labels": [
+      "Health and Medicine > Medical Center"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595114,
+    "lng": -5.95172,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "external_id": "4eccb83f77c8448cd5b26755",
+    "name": "Grosvenor Road Surgery",
+    "category": "Health and Medicine > Physician > Doctor's Office",
+    "category_ids": [
+      "4bf58dd8d48988d177941735"
+    ],
+    "category_labels": [
+      "Health and Medicine > Physician > Doctor's Office"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59486443456119,
+    "lng": -5.95077007927063,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "external_id": "0f6c517b56264e63be33246f",
+    "name": "Shopmobility",
+    "category": "Retail",
+    "category_ids": [
+      "4d4b7105d754a06378d81259"
+    ],
+    "category_labels": [
+      "Retail"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595432,
+    "lng": -5.94551,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "69408f1eb9c5366b7b6e98f1",
+    "name": "Locke's Auctioneers & Valuers",
+    "category": "Retail > Auction House",
+    "category_ids": [
+      "63be6904847c3692a84b9be2",
+      "4d4b7105d754a06378d81259"
+    ],
+    "category_labels": [
+      "Retail > Auction House",
+      "Retail"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59034854142388,
+    "lng": -5.951874799627674,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "420f465207f84dadcffd2217",
+    "name": "Charles Hurst Aston Martin",
+    "category": "Retail > Automotive Retail > Car Dealership",
+    "category_ids": [
+      "4eb1c1623b7b52c0e1adc2ec"
+    ],
+    "category_labels": [
+      "Retail > Automotive Retail > Car Dealership"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5877279843684,
+    "lng": -5.951059581088345,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "5ba3f5243731ee002c16972d",
+    "name": "Belfast Joinery",
+    "category": "Retail > Construction Supplies Store",
+    "category_ids": [
+      "5454144b498ec1f095bff2f2"
+    ],
+    "category_labels": [
+      "Retail > Construction Supplies Store"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5911708,
+    "lng": -5.9499378,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "618234667b3f850902550793",
+    "name": "SPAR",
+    "category": "Retail > Convenience Store",
+    "category_ids": [
+      "4d954b0ea243a5684a65b473",
+      "52f2ab2ebcbc57f1066b8b38",
+      "4bf58dd8d48988d118951735"
+    ],
+    "category_labels": [
+      "Retail > Convenience Store",
+      "Business and Professional Services > Lottery Retailer",
+      "Retail > Food and Beverage Retail > Grocery Store"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595433762872666,
+    "lng": -5.947586720060254,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "external_id": "02c82c4709d848f06957645c",
+    "name": "Cullingtree Pharmacy",
+    "category": "Retail > Drugstore",
+    "category_ids": [
+      "5745c2e4498e11e7bccabdbd"
+    ],
+    "category_labels": [
+      "Retail > Drugstore"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.594993,
+    "lng": -5.951193,
+    "opening_hours": "08:00-22:00",
+    "hours_status": "late_night_likely"
+  },
+  {
+    "external_id": "d247034295b4481104c9e199",
+    "name": "O'Neills Butchers",
+    "category": "Retail > Food and Beverage Retail > Butcher",
+    "category_ids": [
+      "4bf58dd8d48988d11d951735"
+    ],
+    "category_labels": [
+      "Retail > Food and Beverage Retail > Butcher"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595385866787865,
+    "lng": -5.948206667290049,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "cd90061754ea420acfb99118",
+    "name": "Hamiltons",
+    "category": "Retail > Food and Beverage Retail > Liquor Store",
+    "category_ids": [
+      "4bf58dd8d48988d186941735",
+      "4bf58dd8d48988d119951735"
+    ],
+    "category_labels": [
+      "Retail > Food and Beverage Retail > Liquor Store",
+      "Retail > Food and Beverage Retail > Wine Store"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595314,
+    "lng": -5.948444,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "765faf51cbd04010fc3e8b60",
+    "name": "Wineflair",
+    "category": "Retail > Food and Beverage Retail > Liquor Store",
+    "category_ids": [
+      "4bf58dd8d48988d186941735",
+      "4bf58dd8d48988d119951735"
+    ],
+    "category_labels": [
+      "Retail > Food and Beverage Retail > Liquor Store",
+      "Retail > Food and Beverage Retail > Wine Store"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59530561875559,
+    "lng": -5.948547799352074,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "694080bfb9c5366b7b2583f7",
+    "name": "Fit 4 Life GVRT",
+    "category": "Sports and Recreation > Gym and Studio",
+    "category_ids": [
+      "4bf58dd8d48988d175941735"
+    ],
+    "category_labels": [
+      "Sports and Recreation > Gym and Studio"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.5889834,
+    "lng": -5.9504253,
+    "opening_hours": "06:00-22:00",
+    "hours_status": "guestimated_extended_hours"
+  },
+  {
+    "external_id": "301a7c4d4c6746c0894922c9",
+    "name": "Grosvenor House Hostel",
+    "category": "Travel and Transportation > Lodging > Hostel",
+    "category_ids": [
+      "4bf58dd8d48988d1ee931735",
+      "4bf58dd8d48988d1fa931735"
+    ],
+    "category_labels": [
+      "Travel and Transportation > Lodging > Hostel",
+      "Travel and Transportation > Lodging > Hotel"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.595432,
+    "lng": -5.94551,
+    "opening_hours": "00:00-24:00",
+    "hours_status": "verified_24_7"
+  },
+  {
+    "external_id": "fb70afd7b19f4354ce678ab5",
+    "name": "Value Cabs",
+    "category": "Travel and Transportation > Transport Hub > Taxi Stand",
+    "category_ids": [
+      "53fca564498e1a175f32528b"
+    ],
+    "category_labels": [
+      "Travel and Transportation > Transport Hub > Taxi Stand"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59548877809698,
+    "lng": -5.94547923635025,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  },
+  {
+    "external_id": "a76d331edbc140b3150cb066",
+    "name": "Selective Travel Management",
+    "category": "Travel and Transportation > Travel Agency",
+    "category_ids": [
+      "4f04b08c2fb6e1c99f3db0bd"
+    ],
+    "category_labels": [
+      "Travel and Transportation > Travel Agency"
+    ],
+    "source": "foursquare_os_places",
+    "lat": 54.59147717410392,
+    "lng": -5.950666401291623,
+    "opening_hours": null,
+    "hours_status": "hours_unknown"
+  }
+]

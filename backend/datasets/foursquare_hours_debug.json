@@ -1,0 +1,52 @@
+[
+  {
+    "external_id": "ec22694ff2f149eacc99f957",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "698a648a1d5f3f1a8d2e37e3",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "9cada6ba57d1477fc9ce1dde",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "5c7d88f90457b7002c7bd505",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "69408888b9c5366b7b4d4247",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "69408290b9c5366b7b2cdc51",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "3766a4055a804b98d80197ec",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "5ef30cf0b5d245c39af778c4",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "762928989e114cbfb171a5d7",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  },
+  {
+    "external_id": "bd9d5bc042964deb06004c31",
+    "status_code": 429,
+    "body": "{\"message\":\"Your account has no API credits remaining. Please visit your organization’s billing page at https://foursquare.com/developers/orgs to manually add credits or enable automatic payments. Purchasing credits is required if you are trying to make Premium calls or you have exceeded your freePro tier limit.\"}"
+  }
+]

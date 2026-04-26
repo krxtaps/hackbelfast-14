@@ -42,7 +42,7 @@ _MAPS = _BASE / "maps"
 
 LIGHTING_FAULTS_CSV = _DATASETS / "LightingFaultsCurrentYear.csv"
 LIGHTING_ASSETS_CSV = _DATASETS / "Street Lighting Assets.csv"
-HIGHWAY_NETWORK_GEOJSON = _DATASETS / "HighwayNetwork.geojson"  # placeholder
+HIGHWAY_NETWORK_CSV = _DATASETS / "HIGHWAY_NETWORK.CSV"
 BOTANIC_SEED = _MAPS / "seed" / "botanic-streets.seed.geojson"
 
 # ---------------------------------------------------------------------------
@@ -244,22 +244,50 @@ def _load_botanic_streets() -> list[dict[str, Any]]:
 @lru_cache(maxsize=1)
 def _load_highway_network() -> pl.DataFrame | None:
     """
-    Placeholder loader for the Open Data NI Highway Network dataset.
-    Expected file: datasets/HighwayNetwork.geojson
-    Wire up the columns once the file is available.
+    Load official Highway Network CSV and filter to Eastern division (Belfast).
+    Returns a polars DataFrame.
     """
-    if not HIGHWAY_NETWORK_GEOJSON.exists():
+    if not HIGHWAY_NETWORK_CSV.exists():
         return None
-    with open(HIGHWAY_NETWORK_GEOJSON, "r", encoding="utf-8") as f:
-        raw = json.load(f)
-    rows = []
-    for feat in raw.get("features", []):
-        props = feat.get("properties", {})
-        rows.append({
-            "road_name": props.get("ROAD_NAME") or props.get("name") or "",
-            "road_class": props.get("ROAD_CLASS") or props.get("road_class") or "unknown",
-        })
-    return pl.DataFrame(rows) if rows else None
+
+    df = pl.read_csv(
+        HIGHWAY_NETWORK_CSV,
+        infer_schema_length=1000,
+        ignore_errors=True,
+    )
+    # Filter to Eastern division for performance
+    df = df.filter(pl.col("DIVISION_NAME") == "EASTERN")
+    return df
+
+
+def _match_official_class(street_name: str | None, highway_df: pl.DataFrame | None) -> str | None:
+    """
+    Find official class (A, B, C, U, F) for a street.
+    Uses substring matching on SECTION_NAME.
+    """
+    if highway_df is None or not street_name:
+        return None
+
+    s_name = street_name.upper()
+    # Handle common abbreviations (e.g., Avenue -> AV)
+    s_name = s_name.replace(" AVENUE", " AV")
+    s_name = s_name.replace(" ROAD", " RD")
+    s_name = s_name.replace(" STREET", " ST")
+    s_name = s_name.replace(" GARDENS", " GDS")
+    s_name = s_name.replace(" TERRACE", " TER")
+    s_name = s_name.replace(" PLACE", " PL")
+    s_name = s_name.replace(" SQUARE", " SQ")
+    s_name = s_name.replace(" CRESCENT", " CRES")
+
+    # Filter to rows where SECTION_NAME contains the street name
+    # We look for the part after the first space (id prefix)
+    matches = highway_df.filter(pl.col("SECTION_NAME").str.contains(s_name))
+    if matches.is_empty():
+        return None
+
+    # Return the most frequent class among matches
+    counts = matches["CLASS"].value_counts().sort("count", descending=True)
+    return counts["CLASS"][0]
 
 
 # ---------------------------------------------------------------------------
@@ -335,14 +363,25 @@ def _highway_road_class(highway_tag: str) -> str:
     return mapping.get(highway_tag, highway_tag or "unknown")
 
 
+# Road class bonus mapping (Official Class → score adjustment)
+OFFICIAL_CLASS_BONUSES: dict[str, float] = {
+    "A": 3.0,  # Main arterial roads
+    "B": 2.0,  # Secondary routes
+    "C": 1.5,  # Tertiary / collector roads
+    "U": 1.0,  # Unclassified / Residential
+    "F": 0.0,  # Footway
+}
+
+
 def _compute_baseline_adjustment(
     asset_count: int,
     fault_count: int,
     highway_tag: str,
+    official_class: str | None = None,
 ) -> tuple[float, int, list[str]]:
     """
     Deterministic formula:
-      adjustment = asset_bonus - fault_penalty + highway_bonus
+      adjustment = asset_bonus - fault_penalty + road_class_bonus
       score = base_score + adjustment
     Returns (adjustment, score, reasons).
     """
@@ -356,10 +395,17 @@ def _compute_baseline_adjustment(
     if fault_count > 0:
         reasons.append(f"−{fault_penalty:.1f} from {fault_count} open lighting fault(s)")
 
-    highway_bonus = HIGHWAY_BONUSES.get(highway_tag, 0.0)
+    # Prefer official road class if available, otherwise fallback to OSM tag
+    if official_class and official_class in OFFICIAL_CLASS_BONUSES:
+        highway_bonus = OFFICIAL_CLASS_BONUSES[official_class]
+        class_label = f"official class {official_class}"
+    else:
+        highway_bonus = HIGHWAY_BONUSES.get(highway_tag, 0.0)
+        class_label = f"road class ({highway_tag})"
+
     if highway_bonus != 0.0:
         sign = "+" if highway_bonus > 0 else "−"
-        reasons.append(f"{sign}{abs(highway_bonus):.1f} from road class ({highway_tag})")
+        reasons.append(f"{sign}{abs(highway_bonus):.1f} from {class_label}")
 
     adjustment = round(asset_bonus - fault_penalty + highway_bonus, 2)
     score = max(0, min(100, int(ENVIRONMENT_BASE_SCORE + adjustment)))
@@ -401,18 +447,25 @@ def compute_environment_signals(feature: dict[str, Any]) -> dict[str, Any]:
     # Load datasets (cached after first call)
     assets_df = _load_lighting_assets()
     faults_df = _load_lighting_faults()
+    highway_df = _load_highway_network()
 
     asset_count = _count_nearby_assets(lat, lng, assets_df, ASSET_RADIUS_M) if assets_df is not None else 0
     fault_count = _count_nearby_faults(street_name, faults_df) if faults_df is not None else 0
+    official_class = _match_official_class(street_name, highway_df)
 
     road_class = _highway_road_class(highway_tag)
+    if official_class:
+        road_class = f"Official {official_class} (from {road_class})"
 
-    adjustment, score, reasons = _compute_baseline_adjustment(asset_count, fault_count, highway_tag)
+    adjustment, score, reasons = _compute_baseline_adjustment(
+        asset_count, fault_count, highway_tag, official_class
+    )
 
     return {
         "street_id": street_id,
         "street_name": street_name,
         "highway": highway_tag,
+        "official_class": official_class,
         "road_class": road_class,
         "lighting_asset_count": asset_count,
         "lighting_fault_count": fault_count,
