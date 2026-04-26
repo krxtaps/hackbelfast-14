@@ -1,6 +1,28 @@
 from typing import Optional
 from sqlmodel import Field, SQLModel
 
+
+class NewsIncident(SQLModel, table=True):
+    __table_args__ = {"extend_existing": True}
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    source: str = Field(index=True, description="Publisher/source name")
+    url: str = Field(index=True, unique=True, description="Canonical URL for dedupe")
+    title: str
+    published_at: Optional[str] = Field(default=None, description="ISO timestamp if available")
+
+    # Extracted fields (LLM-assisted), best-effort.
+    location_text: Optional[str] = Field(default=None, index=True)
+    street_name: Optional[str] = Field(default=None, index=True)
+    street_id: Optional[str] = Field(default=None, index=True)
+    lat: Optional[float] = Field(default=None)
+    lng: Optional[float] = Field(default=None)
+    category: Optional[str] = Field(default=None, index=True)
+    severity: Optional[int] = Field(default=None, description="1-5")
+
+    # Cached, short LLM summary for UI.
+    summary: Optional[str] = Field(default=None)
+
 class Street(SQLModel, table=True):
     __table_args__ = {'extend_existing': True}
     

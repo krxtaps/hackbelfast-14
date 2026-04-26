@@ -1,6 +1,8 @@
 from contextlib import asynccontextmanager
+from pathlib import Path
 from typing import Optional
 
+from dotenv import load_dotenv
 from fastapi import Depends, FastAPI, HTTPException, Query
 from fastapi.middleware.gzip import GZipMiddleware
 from sqlmodel import Session, select
@@ -17,8 +19,14 @@ from services.environment_scoring import (
 from services.geo import consolidate_street_segments
 from services.pathfinding_service import PathfindingService
 from services.safety_engine import get_combined_safety_score, get_street_combined_score
+from services.news_risk.news_ingest import ingest_sources
+from services.news_risk.langchain_worker import NewsLangchainWorker
+from services.news_risk.news_risk import compute_news_risk
+
+load_dotenv(Path(__file__).parent / ".env")
 
 pathfinding_service = PathfindingService()
+news_worker = NewsLangchainWorker()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -26,7 +34,15 @@ async def lifespan(app: FastAPI):
     create_db_and_tables()
     # Warm pathfinding graph once so first route request is fast.
     await pathfinding_service.initialize_graph()
+    # First population before serving requests.
+    try:
+        await news_worker.run_once()
+    except Exception:
+        pass
+    # Keep ingesting in the background.
+    news_worker.start()
     yield
+    await news_worker.stop()
 
 
 app = FastAPI(
@@ -57,6 +73,48 @@ def read_root():
         "area": "Botanic, Belfast",
         "engine": "SafeWalk Hybrid v1.1",
     }
+
+
+@app.post("/news/ingest", tags=["News"])
+async def ingest_news():
+    """
+    Pulls latest RSS items and updates the local news cache.
+    """
+    return await ingest_sources()
+
+
+@app.get("/news/worker/status", tags=["News"])
+def news_worker_status():
+    """
+    Returns status for the scheduled LangChain news worker.
+    """
+    return news_worker.status()
+
+
+@app.post("/news/worker/run-once", tags=["News"])
+async def news_worker_run_once():
+    """
+    Triggers one immediate worker cycle.
+    """
+    return await news_worker.run_once()
+
+
+@app.get("/news/risk", tags=["News"])
+def get_news_risk(
+    lookback_hours: int = Query(72, ge=1, le=720),
+    lat: float | None = None,
+    lng: float | None = None,
+    street_id: str | None = None,
+):
+    """
+    Returns a cached local-news risk signal (0-100) with citations.
+    """
+    return compute_news_risk(
+        lookback_hours=lookback_hours,
+        lat=lat,
+        lng=lng,
+        street_id=street_id,
+    )
 
 
 # ---------------------------------------------------------------------------

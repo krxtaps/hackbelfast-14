@@ -8,6 +8,7 @@ from services.amenities.amenity_scoring import (
 )
 from services.environment_scoring import compute_environment_signals
 from services.geo import calculate_centroid, consolidate_street_segments, haversine_m
+from services.news_risk.news_risk import news_penalty_points
 from services.police_data_scoring import (
     calculate_score_from_crimes,
     fetch_nearby_crimes,
@@ -124,6 +125,8 @@ async def get_combined_safety_score(
 
     amenity_bonus = amenity_details.get("bonus", 0.0)
     sanctuary_bonus = sanctuary_details.get("bonus", 0.0)
+    news_risk = news_penalty_points(lat=lat, lng=lng, lookback_hours=72)
+    news_penalty = float(news_risk.get("penalty_points", 0.0))
 
     # 5. Hybrid Scoring Logic
     # Base: 60% Crime, 40% Environment
@@ -133,7 +136,7 @@ async def get_combined_safety_score(
         + (env_score * WEIGHT_ENVIRONMENT_DIRECT)
         + (nb_score * WEIGHT_ENVIRONMENT_NEIGHBORHOOD)
     )
-    final_score = int(min(100, base_score + amenity_bonus + sanctuary_bonus))
+    final_score = int(max(0, min(100, base_score + amenity_bonus + sanctuary_bonus - news_penalty)))
 
     # Unified Explanations
     explanations = []
@@ -153,6 +156,11 @@ async def get_combined_safety_score(
         explanations.extend(amenity_details["reasons"])
     else:
         explanations.append("No major public amenities within 200m.")
+    explanations.append("--- Local News Signal ---")
+    explanations.append(
+        f"Recent local-news risk applied as -{news_penalty:.1f} points "
+        f"(risk {news_risk.get('risk', 0):.1f}, {news_risk.get('incidents_used', 0)} incident(s))."
+    )
 
     return {
         "location": {"lat": lat, "lng": lng, "geometry": geometry},
@@ -186,6 +194,12 @@ async def get_combined_safety_score(
                 "bonus_applied": amenity_bonus,
             },
             "regional_average": round(global_avg, 1),
+            "news_signal": {
+                "type": "penalty",
+                "risk": news_risk.get("risk", 0.0),
+                "incidents_used": news_risk.get("incidents_used", 0),
+                "penalty_applied": news_penalty,
+            },
         },
         "explanations": explanations,
         "raw_data": {
@@ -193,6 +207,7 @@ async def get_combined_safety_score(
             "environment": env_details,
             "sanctuaries": sanctuary_details,
             "amenities": amenity_details,
+            "news_risk": news_risk,
         },
     }
 
@@ -248,6 +263,8 @@ async def get_street_combined_score(
 
     amenity_bonus = amenity_details.get("bonus", 0.0)
     sanctuary_bonus = sanctuary_details.get("bonus", 0.0)
+    news_risk = news_penalty_points(street_id=street_id, lat=lat, lng=lng, lookback_hours=72)
+    news_penalty = float(news_risk.get("penalty_points", 0.0))
 
     # 5. Global Relativity
     stats = _get_global_env_stats()
@@ -265,7 +282,7 @@ async def get_street_combined_score(
         + (env_score * WEIGHT_ENVIRONMENT_DIRECT)
         + (nb_score * WEIGHT_ENVIRONMENT_NEIGHBORHOOD)
     )
-    final_score = int(min(100, base_score + amenity_bonus + sanctuary_bonus))
+    final_score = int(max(0, min(100, base_score + amenity_bonus + sanctuary_bonus - news_penalty)))
 
     # Combined explanations
     all_explanations = crime_explanations + env_explanations
@@ -286,6 +303,10 @@ async def get_street_combined_score(
         all_explanations.extend(sanctuary_details["reasons"])
     if amenity_details["reasons"]:
         all_explanations.extend(amenity_details["reasons"])
+    all_explanations.append(
+        f"Local News Signal: -{news_penalty:.1f} points "
+        f"(risk {news_risk.get('risk', 0):.1f}, {news_risk.get('incidents_used', 0)} incident(s))."
+    )
 
     return {
         "street_id": street_id,
@@ -318,11 +339,18 @@ async def get_street_combined_score(
                 "bonus_applied": amenity_bonus,
             },
             "regional_average": round(global_avg, 1),
+            "news_signal": {
+                "type": "penalty",
+                "risk": news_risk.get("risk", 0.0),
+                "incidents_used": news_risk.get("incidents_used", 0),
+                "penalty_applied": news_penalty,
+            },
         },
         "explanations": all_explanations,
         "environment": env_details,
         "sanctuaries": sanctuary_details,
         "amenities": amenity_details,
+        "news_risk": news_risk,
     }
 
 
