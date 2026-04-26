@@ -19,6 +19,7 @@ from services.environment_scoring import (
 from services.geo import consolidate_street_segments
 from services.pathfinding_service import PathfindingService
 from services.safety_engine import get_combined_safety_score, get_street_combined_score
+from services.solana_service import submit_memo_to_solana, get_public_key
 from services.news_risk.news_ingest import ingest_sources
 from services.news_risk.langchain_worker import NewsLangchainWorker
 from services.news_risk.news_risk import compute_news_risk
@@ -291,8 +292,49 @@ async def get_safest_path_between_sanctuaries(
 
 
 # ---------------------------------------------------------------------------
-# Environment Endpoints
+# Solana-backed Anonymous Incident Reporting
 # ---------------------------------------------------------------------------
+
+
+@app.post("/incident/submit", tags=["Solana"])
+async def submit_incident(payload: dict):
+    """
+    Receives an incident report from the frontend, hashes it, and submits
+    a Solana memo transaction (devnet) signed by the backend wallet.
+
+    The frontend user never needs SOL; the backend pays the tx fee.
+    """
+    hash_val = payload.get("hash", "")
+    data = payload.get("payload", {})
+
+    if not hash_val:
+        raise HTTPException(status_code=400, detail="Missing 'hash' field")
+
+    memo = f"belfast-safe:{hash_val}"
+
+    try:
+        result = submit_memo_to_solana(memo)
+        return {
+            "signature": result["signature"],
+            "explorer_url": result["explorer_url"],
+            "memo": memo,
+        }
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Solana submission failed: {e}")
+
+
+@app.get("/wallet/address", tags=["Solana"])
+def get_backend_wallet_address():
+    """
+    Returns the backend's Solana public key so the hackathon judges
+    can verify on-chain activity.
+    """
+    return {
+        "public_key": get_public_key(),
+        "network": "devnet",
+        "explorer_url": f"https://explorer.solana.com/address/{get_public_key()}?cluster=devnet",
+    }
+
 
 
 @app.get("/streets/botanic/environment", tags=["Infrastructure"])

@@ -7,6 +7,9 @@ import "@syncfusion/ej2-buttons/styles/material.css";
 import "@syncfusion/ej2-popups/styles/material.css";
 import "@syncfusion/ej2-navigations/styles/material.css";
 import "@syncfusion/ej2-notifications/styles/material.css";
+import "@syncfusion/ej2-inputs/styles/material.css";
+import "@syncfusion/ej2-lists/styles/material.css";
+import "@syncfusion/ej2-dropdowns/styles/material.css";
 import App from "./App";
 import "./App.css";
 

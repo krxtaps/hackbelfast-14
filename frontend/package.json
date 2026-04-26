@@ -9,13 +9,16 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@solana/web3.js": "^1.98.4",
     "@syncfusion/ej2-base": "^27.2.2",
     "@syncfusion/ej2-buttons": "^27.2.2",
+    "@syncfusion/ej2-dropdowns": "^33.2.3",
     "@syncfusion/ej2-navigations": "^27.2.2",
     "@syncfusion/ej2-notifications": "^27.2.2",
     "@syncfusion/ej2-popups": "^27.2.2",
     "@syncfusion/ej2-progressbar": "^27.2.2",
     "@syncfusion/ej2-react-buttons": "^27.2.2",
+    "@syncfusion/ej2-react-dropdowns": "^33.2.3",
     "@syncfusion/ej2-react-navigations": "^27.2.2",
     "@syncfusion/ej2-react-notifications": "^27.2.2",
     "@syncfusion/ej2-react-popups": "^27.2.2",
@@ -27,6 +30,7 @@
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",
-    "vite": "^5.4.8"
+    "vite": "^5.4.8",
+    "vite-plugin-node-polyfills": "^0.26.0"
   }
 }

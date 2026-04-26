@@ -17,18 +17,14 @@ import {
 } from "@syncfusion/ej2-react-navigations";
 import { ProgressBarComponent } from "@syncfusion/ej2-react-progressbar";
 import { ToastComponent } from "@syncfusion/ej2-react-notifications";
-import {
-  belfastAreaProfiles,
-  dangerZones,
-  safetyTips,
-  streetSafetySegments,
-  supportLocations,
-  userStartPosition
-} from "./data/belfastSafetyData";
-import { scoreRouteForBelfast, useBelfastContext } from "./hooks/useBelfastContext";
+import { AutoCompleteComponent } from "@syncfusion/ej2-react-dropdowns";
+import { userStartPosition, safetyTips } from "./data/belfastSafetyData";
 import { useBotanicStreets } from "./hooks/useBotanicStreets";
 import { useBotanicEnvironment } from "./hooks/useBotanicEnvironment";
 import { useCoordScore } from "./hooks/useCoordScore";
+import { useIncidentReport } from "./hooks/useIncidentReport";
+import { useSanctuaries, fetchNearestSanctuaries } from "./hooks/useSanctuaries";
+import { useSafestPath } from "./hooks/useSafestPath";
 
 // ── Constants ────────────────────────────────────────────────────────────────
 
@@ -79,13 +75,30 @@ function scoreColor(score) {
   return score >= 75 ? "#16a34a" : score >= 55 ? "#f59e0b" : "#ef4444";
 }
 
-function envScoreColor(score) {
-  // Environment scores range 79–88, so use tight thresholds
+// Percentile thresholds computed from all street scores
+function computePercentiles(envMap) {
+  const scores = Object.values(envMap)
+    .map((e) => e.score)
+    .filter((s) => s != null)
+    .sort((a, b) => a - b);
+  if (scores.length < 3) return { p33: 70, p66: 80 };
+  return {
+    p33: scores[Math.floor(scores.length * 0.33)],
+    p66: scores[Math.floor(scores.length * 0.66)],
+  };
+}
+
+function percentileColor(score, p33, p66) {
   if (score == null) return "#94a3b8";
-  if (score >= 86) return "#16a34a";   // top ~35% — safest
-  if (score >= 84) return "#eab308";   // middle band
-  if (score >= 81) return "#f97316";   // lower band
-  return "#ef4444";                     // bottom ~10% — caution
+  if (score >= p66) return "#16a34a";  // top third  → green
+  if (score >= p33) return "#f59e0b";  // mid third  → amber
+  return "#ef4444";                     // bottom third → red
+}
+
+// Fallback (no percentiles yet)
+function envScoreColor(score) {
+  if (score == null) return "#94a3b8";
+  return score >= 80 ? "#16a34a" : score >= 75 ? "#f59e0b" : "#ef4444";
 }
 
 function botanicLineStyle(highway, envScore) {
@@ -170,15 +183,61 @@ function App() {
   const [streetSearch, setStreetSearch] = useState("");
   const [streetSearchResults, setStreetSearchResults] = useState([]);
   const [streetSearchLoading, setStreetSearchLoading] = useState(false);
+  const [incidentModalOpen, setIncidentModalOpen] = useState(false);
+  const [incidentType, setIncidentType] = useState("suspicious_activity");
+  const [incidentDesc, setIncidentDesc] = useState("");
+  const [streetRouteFromSelected, setStreetRouteFromSelected] = useState(null);
+  const [streetRouteToSelected, setStreetRouteToSelected] = useState(null);
+  const [streetRouteLoading, setStreetRouteLoading] = useState(false);
   const toastRef = useRef(null);
+  const fromACRef = useRef(null);
+  const toACRef = useRef(null);
 
-  const belfastContext = useBelfastContext(currentPosition);
   const botanicStreets = useBotanicStreets();
   const botanicEnv = useBotanicEnvironment();
   const coordScore = useCoordScore();
+  const incidentReport = useIncidentReport();
+  const { sanctuaries, status: sanctuariesStatus } = useSanctuaries();
+  const safestPath = useSafestPath();
+
+  // Percentile thresholds — recomputed when env data loads
+  const percentiles = useMemo(
+    () => computePercentiles(botanicEnv.envMap),
+    [botanicEnv.envMap]
+  );
+
+  // Deduplicated street list for AutoComplete data source
+  const streetDataSource = useMemo(() => {
+    const seen = new Set();
+    return botanicStreets.streets
+      .filter((s) => s.name && !seen.has(s.name) && seen.add(s.name))
+      .map((s) => ({ id: s.id, text: s.name }))
+      .sort((a, b) => a.text.localeCompare(b.text));
+  }, [botanicStreets.streets]);
+
   const selectedDistKm = selectedLocation
     ? distanceInKm(currentPosition, selectedLocation.coords)
     : null;
+
+  // Nearest sanctuaries by type (from loaded list, sorted by distance)
+  const nearest = useMemo(() => {
+    if (!sanctuaries.length) return { nearestMedical: null, nearestSanctuary: null };
+    const withDist = sanctuaries.map((s) => ({
+      ...s,
+      distanceKm: distanceInKm(currentPosition, s.coords),
+    }));
+    const nearestFor = (type) =>
+      withDist
+        .filter((s) => s.type === type)
+        .sort((a, b) => a.distanceKm - b.distanceKm)[0] || null;
+    const nearestPharmacy = nearestFor("pharmacy");
+    const nearestClinic = nearestFor("clinic");
+    const nearestSanctuary = nearestFor("sanctuary");
+    const nearestMedical = [nearestPharmacy, nearestClinic]
+      .filter(Boolean)
+      .sort((a, b) => a.distanceKm - b.distanceKm)[0] || null;
+    return { nearestMedical, nearestSanctuary };
+  }, [sanctuaries, currentPosition]);
 
   // Online/offline detection
   useEffect(() => {
@@ -225,95 +284,43 @@ function App() {
     requestCurrentLocation();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Nearest locations
-  const nearest = useMemo(() => {
-    const nearestFor = (type) =>
-      supportLocations
-        .filter((p) => p.type === type)
-        .reduce((best, p) => {
-          const d = distanceInKm(currentPosition, p.coords);
-          return !best || d < best.distanceKm ? { ...p, distanceKm: d } : best;
-        }, null);
+  // Route score from pathfinding result
+  const activeRouteScore = safestPath.meta
+    ? safestPath.meta.avgSafetyScore
+    : null;
 
-    const nearestPharmacy = nearestFor("pharmacy");
-    const nearestClinic = nearestFor("clinic");
-    const nearestSanctuary = nearestFor("sanctuary");
-    const nearestMedical = [nearestPharmacy, nearestClinic]
-      .filter(Boolean)
-      .reduce((best, p) => (!best || p.distanceKm < best.distanceKm ? p : best), null);
-
-    return { nearestMedical, nearestSanctuary };
-  }, [currentPosition]);
-
-  // Streets sorted by proximity
-  const streetsByDistance = useMemo(
-    () =>
-      streetSafetySegments
-        .map((s) => ({
-          ...s,
-          nearestPointDistance: Math.min(...s.path.map((pt) => distanceInKm(currentPosition, pt)))
-        }))
-        .sort((a, b) => a.nearestPointDistance - b.nearestPointDistance),
-    [currentPosition]
-  );
-
-  const currentRisk = useMemo(
-    () => (streetsByDistance.length === 0 ? "low" : streetsByDistance[0].level),
-    [streetsByDistance]
-  );
-
-  const activeRouteScore = useMemo(
-    () =>
-      scoreRouteForBelfast({
-        routePoints,
-        destinationType: selectedLocation?.type,
-        nearbyStreetRisk: currentRisk,
-        areaProfile: belfastContext.areaProfile
-      }),
-    [routePoints, selectedLocation, currentRisk, belfastContext.areaProfile]
-  );
-
-  // All locations sorted by distance from user
+  // All sanctuaries sorted by distance from user
   const locationsByDistance = useMemo(
     () =>
-      supportLocations
+      sanctuaries
         .map((loc) => ({ ...loc, distanceKm: distanceInKm(currentPosition, loc.coords) }))
         .sort((a, b) => a.distanceKm - b.distanceKm),
-    [currentPosition]
+    [sanctuaries, currentPosition]
   );
 
-  // Route builder
-  const buildRoute = ({ location, title, includeLowRiskDetour = false }) => {
+  // Route builder — uses the safest-path API
+  const buildRoute = async ({ location, title }) => {
     if (!location) {
-      setRouteNotice("No suitable destination found in Belfast data.");
+      setRouteNotice("No suitable destination found in the Botanic area.");
       return;
     }
-
-    let points;
-    let fullTitle;
-
-    if (includeLowRiskDetour) {
-      const lowRiskStreet = streetsByDistance.find((s) => s.level === "low");
-      if (!lowRiskStreet) {
-        setRouteNotice("No low-risk street available for safer journey.");
-        return;
-      }
-      points = [
-        currentPosition,
-        lowRiskStreet.path[0],
-        lowRiskStreet.path[lowRiskStreet.path.length - 1],
-        location.coords
-      ];
-      fullTitle = `${title} via ${lowRiskStreet.name}`;
-    } else {
-      points = [currentPosition, location.coords];
-      fullTitle = title;
-    }
-
     setSelectedLocation(location);
-    setRouteTitle(fullTitle);
-    setRoutePoints(points);
+    setRouteTitle(title);
     setRouteNotice("");
+    safestPath.clear();
+
+    const result = await safestPath.findPath(
+      currentPosition[0], currentPosition[1],
+      location.coords[0], location.coords[1]
+    );
+
+    if (result && result.path_coordinates) {
+      setRoutePoints(result.path_coordinates);
+    } else {
+      // Fallback straight line if pathfinding fails
+      setRoutePoints([currentPosition, location.coords]);
+      if (result === null) setRouteNotice("Could not find a street-level path — showing straight line.");
+    }
 
     toastRef.current?.show({
       title: "Route set",
@@ -325,20 +332,24 @@ function App() {
   };
 
   const showMinorInjuries = () =>
-    buildRoute({ location: nearest.nearestMedical, title: "Minor injuries route" });
+    buildRoute({ location: nearest.nearestMedical, title: "Nearest medical" });
   const showSanctuary = () =>
     buildRoute({ location: nearest.nearestSanctuary, title: "Nearest sanctuary" });
   const showSaferJourney = () =>
     buildRoute({
       location: nearest.nearestSanctuary || nearest.nearestMedical,
-      title: "Safer journey",
-      includeLowRiskDetour: true
+      title: "Safest route",
     });
   const clearRoute = () => {
     setSelectedLocation(null);
     setRoutePoints([]);
     setRouteTitle("");
     setRouteNotice("");
+    safestPath.clear();
+    setStreetRouteFromSelected(null);
+    setStreetRouteToSelected(null);
+    if (fromACRef.current) fromACRef.current.value = null;
+    if (toACRef.current) toACRef.current.value = null;
   };
 
   const toggleFilter = (type) =>
@@ -363,15 +374,44 @@ function App() {
       const msg = new SpeechSynthesisUtterance(
         `Route set. Navigating to ${selectedLocation.name}, a ${typeLabels[selectedLocation.type]} ` +
           `located ${selectedDistKm?.toFixed(1)} kilometres from your current position. ` +
-          `The current area risk level is ${currentRisk}. Stay on well-lit routes.`
+          `Stay on well-lit routes in the Botanic area.`
       );
       window.speechSynthesis.speak(msg);
     }
   };
 
-  const disableActions = locationState === "loading" || belfastContext.status === "loading";
+  const disableActions = locationState === "loading" || sanctuariesStatus === "loading";
 
   const handleMapClick = (lat, lng) => coordScore.fetchScore(lat, lng);
+
+  const buildStreetToStreetRoute = async () => {
+    if (!streetRouteFromSelected || !streetRouteToSelected) return;
+    setStreetRouteLoading(true);
+    // Use the midpoint of each street's geometry from the botanic streets GeoJSON
+    const fromStreet = botanicStreets.streets.find(s => s.id === streetRouteFromSelected.id);
+    const toStreet   = botanicStreets.streets.find(s => s.id === streetRouteToSelected.id);
+    if (!fromStreet || !toStreet) {
+      setRouteNotice("Streets not found in map data.");
+      setStreetRouteLoading(false);
+      return;
+    }
+    const midOf = (pts) => pts[Math.floor(pts.length / 2)];
+    const fromCoord = midOf(fromStreet.path);
+    const toCoord   = midOf(toStreet.path);
+
+    setRoutePoints([fromCoord, toCoord]);
+    setRouteTitle(`${streetRouteFromSelected.name} → ${streetRouteToSelected.name}`);
+    setRouteNotice("");
+    setSelectedLocation({ name: streetRouteToSelected.name, type: "sanctuary", coords: toCoord, address: "" });
+    safestPath.clear();
+
+    const result = await safestPath.findPath(fromCoord[0], fromCoord[1], toCoord[0], toCoord[1]);
+    if (result?.path_coordinates) {
+      setRoutePoints(result.path_coordinates);
+    }
+    setStreetRouteLoading(false);
+    setActiveTab(1); // switch to Route tab
+  };
 
   const handleStreetSearch = async (q) => {
     setStreetSearch(q);
@@ -394,23 +434,31 @@ function App() {
           onClick={showMinorInjuries}
           disabled={disableActions}
         >
-          💊 Minor Injuries
+          Minor Injuries
         </ButtonComponent>
         <ButtonComponent
           cssClass="e-success action-btn"
           onClick={showSanctuary}
           disabled={disableActions}
         >
-          🕊️ Sanctuary
+          Sanctuary
         </ButtonComponent>
         <ButtonComponent
           cssClass="e-info action-btn"
           onClick={showSaferJourney}
           disabled={disableActions}
         >
-          🗺️ Safe Journey
+          Safe Journey
         </ButtonComponent>
       </div>
+
+      {/* Report incident button */}
+      <button
+        className="report-incident-btn"
+        onClick={() => { incidentReport.reset(); setIncidentModalOpen(true); }}
+      >
+        Report Incident Anonymously
+      </button>
 
       <div className="filter-strip">
         <span className="filter-label">Show on map:</span>
@@ -443,7 +491,7 @@ function App() {
           onClick={requestCurrentLocation}
           disabled={locationState === "loading"}
         >
-          📍 My Location
+          My Location
         </ButtonComponent>
       </div>
 
@@ -476,13 +524,70 @@ function App() {
 
   const routeContent = () => (
     <div className="tab-panel">
+
+      {/* Street-to-street route planner */}
+      <div className="street-route-planner">
+        <h3 className="section-heading">Plan a Route</h3>
+        <p className="small-note" style={{ marginBottom: "0.85rem" }}>
+          Pick any two streets in the Botanic area — the safest A* path is calculated automatically.
+        </p>
+
+        {/* FROM */}
+        <label className="route-planner-label">From</label>
+        <AutoCompleteComponent
+          id="from-street-ac"
+          ref={fromACRef}
+          dataSource={streetDataSource}
+          fields={{ value: "text" }}
+          placeholder="e.g. Botanic Avenue"
+          highlight={true}
+          minLength={1}
+          select={(args) => {
+            if (args.itemData) {
+              setStreetRouteFromSelected({ id: args.itemData.id, name: args.itemData.text });
+            }
+          }}
+          change={(args) => {
+            if (!args.value) setStreetRouteFromSelected(null);
+          }}
+          cssClass="route-ac"
+        />
+
+        {/* TO */}
+        <label className="route-planner-label" style={{ marginTop: "0.75rem" }}>To</label>
+        <AutoCompleteComponent
+          id="to-street-ac"
+          ref={toACRef}
+          dataSource={streetDataSource}
+          fields={{ value: "text" }}
+          placeholder="e.g. University Road"
+          highlight={true}
+          minLength={1}
+          select={(args) => {
+            if (args.itemData) {
+              setStreetRouteToSelected({ id: args.itemData.id, name: args.itemData.text });
+            }
+          }}
+          change={(args) => {
+            if (!args.value) setStreetRouteToSelected(null);
+          }}
+          cssClass="route-ac"
+        />
+
+        <ButtonComponent
+          cssClass="e-primary find-route-syncfusion-btn"
+          disabled={!streetRouteFromSelected || !streetRouteToSelected || streetRouteLoading}
+          onClick={buildStreetToStreetRoute}
+        >
+          {streetRouteLoading ? "Finding safest path…" : "Find Safest Route"}
+        </ButtonComponent>
+      </div>
+
       {!selectedLocation ? (
-        <div className="empty-state">
-          <div className="empty-icon">🗺️</div>
+        <div className="empty-state" style={{ marginTop: "1rem" }}>
           <p className="empty-title">No active route</p>
           <p className="empty-sub">
-            Use the <strong>Get Help</strong> tab to navigate to the nearest pharmacy, clinic, or
-            sanctuary.
+            Search streets above or use <strong>Get Help</strong> to navigate to the nearest support location.
           </p>
         </div>
       ) : (
@@ -503,81 +608,59 @@ function App() {
             </div>
             <h3 className="route-dest-name">{selectedLocation.name}</h3>
             <p className="route-meta">
-              Route length: {routeDistanceKm(routePoints).toFixed(2)} km ·{" "}
-              {routeTitle}
+              {safestPath.status === "loading" && "⏳ Finding safest path…"}
+              {safestPath.meta && (
+                <>
+                  {(safestPath.meta.distanceM / 1000).toFixed(2)} km via safest streets ·{" "}
+                  Safety score: <strong>{safestPath.meta.avgSafetyScore}/100</strong>
+                </>
+              )}
+              {safestPath.status === "error" && `Straight-line fallback · ${safestPath.error}`}
+              {safestPath.status === "idle" && `${routeDistanceKm(routePoints).toFixed(2)} km`}
             </p>
-            <p className="route-address">📍 {selectedLocation.address}</p>
+            <p className="route-address">{selectedLocation.address || "Botanic area, Belfast"}</p>
             <div className="route-actions">
               <ButtonComponent cssClass="e-outline e-small" onClick={clearRoute}>
-                ✕ Clear Route
+                Clear Route
               </ButtonComponent>
               <ButtonComponent cssClass="e-outline e-small voice-btn" onClick={speakRouteGuide}>
-                🔊 Voice Guide
+                Voice Guide
               </ButtonComponent>
             </div>
-            <p className="voice-note">
-              Voice Guide uses browser TTS now — ElevenLabs natural voice ready to wire in.
-            </p>
           </div>
 
-          {activeRouteScore && (
+          {safestPath.meta && (
             <div className="score-card">
               <h3 className="section-heading">Route Safety Score</h3>
               <div className="score-hero-row">
-                <span className="score-big">{activeRouteScore.overallScore}</span>
+                <span className="score-big">{safestPath.meta.avgSafetyScore}</span>
                 <span className="score-label">/100</span>
                 <span
                   className="score-grade"
                   style={{
-                    background: scoreColor(activeRouteScore.overallScore) + "18",
-                    color: scoreColor(activeRouteScore.overallScore),
-                    border: `2px solid ${scoreColor(activeRouteScore.overallScore)}50`
+                    background: scoreColor(safestPath.meta.avgSafetyScore) + "18",
+                    color: scoreColor(safestPath.meta.avgSafetyScore),
+                    border: `2px solid ${scoreColor(safestPath.meta.avgSafetyScore)}50`
                   }}
                 >
-                  {activeRouteScore.safetyGrade}
+                  {scoreGrade(safestPath.meta.avgSafetyScore)}
                 </span>
               </div>
               <ProgressBarComponent
                 id="overall-score-bar"
                 type="Linear"
-                value={activeRouteScore.overallScore}
+                value={safestPath.meta.avgSafetyScore}
                 height="18"
                 minimum={0}
                 maximum={100}
-                progressColor={scoreColor(activeRouteScore.overallScore)}
+                progressColor={scoreColor(safestPath.meta.avgSafetyScore)}
                 trackColor="#e2e8f0"
                 animation={{ enable: true, duration: 1200 }}
               />
-
-              <div className="breakdown-list">
-                {[
-                  ["💡 Lighting", activeRouteScore.breakdown.lightingScore],
-                  ["🚶 Footfall", activeRouteScore.breakdown.footfallScore],
-                  ["📹 CCTV Coverage", activeRouteScore.breakdown.cctvScore],
-                  ["🚑 Emergency Access", activeRouteScore.breakdown.emergencyAccessScore],
-                  ["⚠️ Street Risk Score", activeRouteScore.breakdown.streetRiskScore]
-                ].map(([label, val]) => (
-                  <div key={label} className="breakdown-row">
-                    <div className="breakdown-header">
-                      <span className="breakdown-label">{label}</span>
-                      <span className="breakdown-val">{val}</span>
-                    </div>
-                    <ProgressBarComponent
-                      id={`bd-${label.replace(/[^a-z0-9]/gi, "")}`}
-                      type="Linear"
-                      value={val}
-                      height="8"
-                      minimum={0}
-                      maximum={100}
-                      progressColor={scoreColor(val)}
-                      trackColor="#e2e8f0"
-                      animation={{ enable: true, duration: 900 }}
-                    />
-                  </div>
-                ))}
-              </div>
               <p className="small-note">
-                Complexity penalty: −{activeRouteScore.breakdown.complexityPenalty}
+                {(safestPath.meta.distanceM / 1000).toFixed(2)} km via{" "}
+                {safestPath.segments.length} street segment
+                {safestPath.segments.length !== 1 ? "s" : ""} · Safety-optimised by Dijkstra
               </p>
             </div>
           )}
@@ -585,12 +668,9 @@ function App() {
       )}
 
       <div className="tips-card">
-        <h3 className="section-heading">
-          Safety Tips —{" "}
-          <span style={{ color: riskColors[currentRisk] }}>{currentRisk.toUpperCase()} RISK</span>
-        </h3>
+        <h3 className="section-heading">Safety Tips</h3>
         <ul className="tips-list">
-          {safetyTips[currentRisk].map((tip) => (
+          {safetyTips["medium"].map((tip) => (
             <li key={tip}>{tip}</li>
           ))}
         </ul>
@@ -598,102 +678,83 @@ function App() {
     </div>
   );
 
-  const safetyContent = () => (
+  const safetyContent = () => {
+    // Top/bottom streets by environment score
+    const rankedStreets = Object.entries(botanicEnv.envMap)
+      .map(([id, env]) => ({ id, name: env.street_name || id, score: env.score }))
+      .filter((s) => s.score != null)
+      .sort((a, b) => b.score - a.score);
+
+    return (
     <div className="tab-panel">
       <div className="advisory-card">
-        <p className="advisory-text">{belfastContext.advisory}</p>
+        <p className="advisory-text">
+          🗺️ Botanic area, South Belfast — safety scores are live, based on PSNI crime data,
+          street lighting infrastructure, and proximity to sanctuaries.
+        </p>
       </div>
 
-      <h3 className="section-heading">Belfast Area Safety Profiles</h3>
+      <h3 className="section-heading">Street Safety Rankings</h3>
       <p className="small-note" style={{ marginBottom: "0.75rem" }}>
-        Scores reflect lighting, footfall, CCTV coverage and emergency access — adjusted for
-        time of day.
+        Colour-coded by percentile: green = top third, amber = middle, red = bottom third.
+        Tap any street on the map for details.
       </p>
 
-      {belfastAreaProfiles.map((area) => {
-        const score = Math.round(
-          ((area.lighting + area.footfall + area.cctvCoverage + area.emergencyAccess) / 4) * 100
-        );
-        const isNearest = belfastContext.areaProfile?.id === area.id;
-        return (
-          <div key={area.id} className={`area-block ${isNearest ? "area-nearest" : ""}`}>
-            <div className="area-header-row">
-              <span className="area-name">
-                {isNearest && <span className="you-are-here">📍 </span>}
-                {area.name}
-                {isNearest && <span className="you-badge"> You are here</span>}
-              </span>
-              <span
-                className="area-score-chip"
-                style={{
-                  background: scoreColor(score) + "18",
-                  color: scoreColor(score),
-                  border: `1px solid ${scoreColor(score)}50`
-                }}
-              >
-                {score}%
-              </span>
-            </div>
-            <ProgressBarComponent
-              id={`area-${area.id}`}
-              type="Linear"
-              value={score}
-              height="14"
-              minimum={0}
-              maximum={100}
-              progressColor={scoreColor(score)}
-              trackColor="#e2e8f0"
-              animation={{ enable: true, duration: 1000 }}
-            />
-            <div className="area-metrics-row">
-              <span title="Lighting">💡 {Math.round(area.lighting * 100)}%</span>
-              <span title="Footfall">🚶 {Math.round(area.footfall * 100)}%</span>
-              <span title="CCTV">📹 {Math.round(area.cctvCoverage * 100)}%</span>
-              <span title="Emergency Access">🚑 {Math.round(area.emergencyAccess * 100)}%</span>
-            </div>
+      {botanicEnv.status === "loading" && <p className="small-note">Loading street data…</p>}
+      {botanicEnv.status === "ready" && (
+        <>
+          <div className="percentile-legend">
+            {[
+              ["🟢 Safest streets", `Score ≥ ${Math.round(percentiles.p66)}`, "#16a34a"],
+              ["🟡 Mid tier", `${Math.round(percentiles.p33)}–${Math.round(percentiles.p66)}`, "#f59e0b"],
+              ["🔴 Lower tier", `Score < ${Math.round(percentiles.p33)}`, "#ef4444"],
+            ].map(([label, range, color]) => (
+              <div key={label} className="percentile-row">
+                <span className="street-dot" style={{ background: color }} />
+                <span className="street-name">{label}</span>
+                <span className="risk-chip" style={{ background: color + "18", color, border: `1px solid ${color}50` }}>
+                  {range}
+                </span>
+              </div>
+            ))}
           </div>
-        );
-      })}
 
-      <h3 className="section-heading" style={{ marginTop: "1.25rem" }}>
-        Nearby Street Risk
-      </h3>
-      <ul className="street-risk-list">
-        {streetsByDistance.slice(0, 6).map((s) => (
-          <li key={s.id} className="street-risk-item">
-            <span className="street-dot" style={{ background: riskColors[s.level] }} />
-            <span className="street-name">{s.name}</span>
-            <span
-              className="risk-chip"
-              style={{
-                background: riskColors[s.level] + "18",
-                color: riskColors[s.level],
-                border: `1px solid ${riskColors[s.level]}50`
-              }}
-            >
-              {s.level.toUpperCase()}
-            </span>
-          </li>
-        ))}
-      </ul>
+          <h3 className="section-heading" style={{ marginTop: "1rem" }}>Top 5 Safest</h3>
+          <ul className="street-risk-list">
+            {rankedStreets.slice(0, 5).map((s) => (
+              <li key={s.id} className="street-risk-item">
+                <span className="street-dot" style={{ background: percentileColor(s.score, percentiles.p33, percentiles.p66) }} />
+                <span className="street-name">{s.name}</span>
+                <span className="risk-chip" style={{ background: "#16a34a18", color: "#16a34a", border: "1px solid #16a34a50" }}>
+                  {s.score}/100
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          <h3 className="section-heading" style={{ marginTop: "1rem" }}>⚠️ Needs Attention</h3>
+          <ul className="street-risk-list">
+            {rankedStreets.slice(-5).reverse().map((s) => (
+              <li key={s.id} className="street-risk-item">
+                <span className="street-dot" style={{ background: percentileColor(s.score, percentiles.p33, percentiles.p66) }} />
+                <span className="street-name">{s.name}</span>
+                <span className="risk-chip" style={{ background: "#ef444418", color: "#ef4444", border: "1px solid #ef444450" }}>
+                  {s.score}/100
+                </span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
 
       {/* 🆕 Street search */}
       <div className="street-search-section" style={{ marginTop: "1.25rem" }}>
         <h3 className="section-heading">Search Streets</h3>
         <input
           type="text"
-          className="street-search-input"
           placeholder="Search for a street…"
           value={streetSearch}
           onChange={(e) => handleStreetSearch(e.target.value)}
-          style={{
-            width: "100%",
-            padding: "8px 10px",
-            borderRadius: 6,
-            border: "1px solid #cbd5e1",
-            fontSize: 14,
-            boxSizing: "border-box"
-          }}
         />
         {streetSearchLoading && (
           <p className="small-note" style={{ marginTop: 4 }}>Searching…</p>
@@ -736,7 +797,8 @@ function App() {
         )}
       </div>
     </div>
-  );
+    );
+  };
 
   // ── Render ───────────────────────────────────────────────────────────────
 
@@ -755,46 +817,36 @@ function App() {
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
 
-          {/* Colour-coded danger zone polygons */}
-          {dangerZones.map((zone) => (
-            <Polygon
-              key={zone.id}
-              positions={zone.polygon}
-              pathOptions={{
-                color: riskColors[zone.level],
-                fillColor: riskColors[zone.level],
-                weight: 1.5,
-                fillOpacity: 0.15,
-                opacity: 0.45
-              }}
-            >
-              <Popup>
-                <strong>{zone.name}</strong>
-                <br />
-                Risk level: {zone.level.toUpperCase()}
-              </Popup>
-            </Polygon>
-          ))}
+          {/* Botanic streets — hidden when a route is active to reduce visual noise */}
+          {botanicStreets.status === "ready" && routePoints.length < 2 &&
+            botanicStreets.streets.map((street) => {
+              const env = botanicEnv.envMap[street.id];
+              const score = env?.score ?? null;
+              const color = percentileColor(score, percentiles.p33, percentiles.p66);
+              const weight = ["primary", "secondary"].includes(street.highway) ? 5
+                : street.highway === "tertiary" ? 4 : 3;
+              return (
+                <Polyline
+                  key={street.id}
+                  positions={street.path}
+                  pathOptions={{ color, weight, opacity: 0.85 }}
+                >
+                  <Popup>
+                    <strong>{street.name || "Unnamed street"}</strong><br />
+                    Safety score: {score != null ? `${score}/100` : "N/A"}<br />
+                    {score != null && (
+                      score >= percentiles.p66 ? "🟢 Top tier — safest streets"
+                      : score >= percentiles.p33 ? "🟡 Mid tier"
+                      : "🔴 Lower tier — exercise caution"
+                    )}<br />
+                    {env?.reasons?.slice(0, 2).join(" · ")}
+                  </Popup>
+                </Polyline>
+              );
+            })}
 
-          {/* Street-level safety overlays */}
-          {streetSafetySegments.map((s) => (
-            <Polyline
-              key={s.id}
-              positions={s.path}
-              pathOptions={{ color: riskColors[s.level], weight: 6, opacity: 0.75 }}
-            >
-              <Popup>
-                <strong>{s.name}</strong>
-                <br />
-                Safety: {s.level.toUpperCase()}
-                <br />
-                {s.notes}
-              </Popup>
-            </Polyline>
-          ))}
-
-          {/* Support location markers (filtered) */}
-          {supportLocations
+          {/* Real sanctuary/location markers from API */}
+          {sanctuaries
             .filter((loc) => activeFilters.includes(loc.type))
             .map((loc) => (
               <CircleMarker
@@ -808,13 +860,9 @@ function App() {
                 }}
               >
                 <Popup>
-                  <strong>{loc.name}</strong>
-                  <br />
-                  {typeLabels[loc.type]}
-                  <br />
-                  🕐 {loc.hours}
-                  <br />
-                  📞 {loc.phone}
+                  <strong>{loc.name}</strong><br />
+                  {typeIcons[loc.type]} {typeLabels[loc.type]}<br />
+                  🕐 {loc.hours || "Hours unavailable"}
                 </Popup>
               </CircleMarker>
             ))}
@@ -828,37 +876,67 @@ function App() {
             <Popup>{locationStatus}</Popup>
           </CircleMarker>
 
-          {/* Active route line */}
-          {routePoints.length > 1 && (
-            <Polyline
-              positions={routePoints}
-              pathOptions={{ color: "#0ea5e9", weight: 7, dashArray: "10 8", opacity: 0.9 }}
-            />
+          {/* Active route — per-segment safety colours + outline for contrast */}
+          {routePoints.length > 1 && safestPath.segments.length > 0 && (
+            <>
+              {/* White outline underneath for readability on dark tiles */}
+              <Polyline
+                positions={routePoints}
+                pathOptions={{ color: "#fff", weight: 11, opacity: 0.6 }}
+              />
+              {/* Per-segment safety colouring */}
+              {safestPath.segments.map((seg, i) => {
+                const segColor = scoreColor(Math.round(seg.safety_score_100));
+                return (
+                  <Polyline
+                    key={i}
+                    positions={[[seg.from.lat, seg.from.lng], [seg.to.lat, seg.to.lng]]}
+                    pathOptions={{ color: segColor, weight: 7, opacity: 0.95 }}
+                  >
+                    <Popup>
+                      <strong>{seg.street_name || "Street"}</strong><br />
+                      Safety: {seg.safety_score_100}/100<br />
+                      Length: {seg.distance_m}m
+                    </Popup>
+                  </Polyline>
+                );
+              })}
+            </>
           )}
 
-          {/* 🆕 API-loaded botanic street overlays (from Overpass) */}
-          {botanicStreets.status === "ready" &&
-            botanicStreets.streets.map((street) => {
-              const env = botanicEnv.envMap[street.id];
-              const score = env?.score ?? null;
-              return (
-                <Polyline
-                  key={street.id}
-                  positions={street.path}
-                  pathOptions={botanicLineStyle(street.highway, score)}
-                >
-                  <Popup>
-                    <strong>{street.name || "Unnamed"}</strong>
-                    <br />
-                    Highway: {street.highway}
-                    <br />
-                    Environment score: {score != null ? `${score}/100` : "N/A"}
-                    <br />
-                    {env?.reasons?.slice(0, 2).join(" · ")}
-                  </Popup>
-                </Polyline>
-              );
-            })}
+          {/* Fallback: straight-line route when pathfinding unavailable */}
+          {routePoints.length > 1 && safestPath.segments.length === 0 && (
+            <>
+              <Polyline
+                positions={routePoints}
+                pathOptions={{ color: "#fff", weight: 11, opacity: 0.5 }}
+              />
+              <Polyline
+                positions={routePoints}
+                pathOptions={{ color: "#0ea5e9", weight: 7, dashArray: "10 8", opacity: 0.9 }}
+              />
+            </>
+          )}
+
+          {/* Route destination marker */}
+          {selectedLocation && (
+            <CircleMarker
+              center={selectedLocation.coords}
+              radius={14}
+              pathOptions={{
+                color: "#fff",
+                fillColor: typeColors[selectedLocation.type] || "#0ea5e9",
+                fillOpacity: 1,
+                weight: 3
+              }}
+            >
+              <Popup>
+                <strong>{selectedLocation.name}</strong><br />
+                {typeIcons[selectedLocation.type]} Destination
+              </Popup>
+            </CircleMarker>
+          )}
+
 
           {/* 🆕 Coord score popup when user clicks the map */}
           {coordScore.result && coordScore.latlng && (
@@ -930,8 +1008,8 @@ function App() {
             <p className="app-subtitle">Street-level safety companion</p>
           </div>
           <div className="panel-header-right">
-            <span className={`risk-pill risk-${currentRisk}`}>
-              {currentRisk.toUpperCase()} RISK
+            <span className={`risk-pill risk-medium`}>
+              BOTANIC
             </span>
             <button
               className="sos-btn"
@@ -955,9 +1033,9 @@ function App() {
             Live location unavailable — using demo Belfast position
           </div>
         )}
-        {belfastContext.status === "error" && (
+        {sanctuariesStatus === "error" && (
           <div className="state-banner error" role="alert">
-            Context error: {belfastContext.error}
+            Could not load sanctuaries — check the backend is running
           </div>
         )}
         {routeNotice && (
@@ -970,9 +1048,9 @@ function App() {
         <div className="tab-wrapper">
           <div className="custom-tab-header" role="tablist">
             {[
-              { label: "🆘 Get Help" },
-              { label: "🗺️ Route" },
-              { label: "📊 Safety Data" },
+              { label: "Get Help" },
+              { label: "Route" },
+              { label: "Safety Data" },
             ].map((t, i) => (
               <button
                 key={i}
@@ -994,6 +1072,118 @@ function App() {
       </section>
 
       <ToastComponent ref={toastRef} />
+
+      {/* ── Incident Report Modal ─────────────────────────────────────────── */}
+      {incidentModalOpen && (
+        <div className="modal-backdrop" onClick={() => setIncidentModalOpen(false)}>
+          <div className="modal-card" onClick={(e) => e.stopPropagation()}>
+
+            {incidentReport.status === "done" ? (
+              /* ── Success state ── */
+              <div className="modal-success">
+                <div className="modal-success-icon">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#16a34a" strokeWidth="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <h2 className="modal-success-title">Report Submitted</h2>
+                <p className="modal-success-sub">
+                  Your report has been recorded. No personal data was stored.
+                </p>
+                <div className="tx-box">
+                  <span className="tx-label">Reference</span>
+                  <code className="tx-sig">{incidentReport.txSignature?.slice(0, 20)}…</code>
+                  {incidentReport.explorerUrl && (
+                    <a
+                      href={incidentReport.explorerUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="tx-link"
+                    >
+                      View details
+                    </a>
+                  )}
+                </div>
+                <button className="modal-close-btn" onClick={() => {
+                  setIncidentModalOpen(false);
+                  setIncidentDesc("");
+                  setIncidentType("suspicious_activity");
+                  incidentReport.reset();
+                }}>
+                  Close
+                </button>
+              </div>
+            ) : (
+              /* ── Form state ── */
+              <>
+                <div className="modal-header">
+                  <h2 className="modal-title">Report an Incident</h2>
+                  <button className="modal-x" onClick={() => setIncidentModalOpen(false)}>×</button>
+                </div>
+
+                <p className="modal-sub">
+                  Reports are <strong>anonymous</strong> — no identity is stored.
+                  A cryptographic reference is generated for integrity.
+                </p>
+
+                <label className="modal-label">Incident type</label>
+                <select
+                  className="modal-select"
+                  value={incidentType}
+                  onChange={(e) => setIncidentType(e.target.value)}
+                  disabled={incidentReport.status === "submitting"}
+                >
+                  <option value="suspicious_activity">Suspicious Activity</option>
+                  <option value="broken_lighting">Broken / Missing Lighting</option>
+                  <option value="street_harassment">Street Harassment</option>
+                  <option value="unsafe_road">Unsafe Road Condition</option>
+                  <option value="antisocial_behaviour">Antisocial Behaviour</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <label className="modal-label">Description <span className="modal-optional">(optional)</span></label>
+                <textarea
+                  className="modal-textarea"
+                  rows={3}
+                  placeholder="Briefly describe what happened…"
+                  value={incidentDesc}
+                  onChange={(e) => setIncidentDesc(e.target.value)}
+                  disabled={incidentReport.status === "submitting"}
+                />
+
+                <div className="modal-location-row">
+                  <span className="modal-location-label">Location</span>
+                  <span className="modal-location-val">
+                    {currentPosition[0].toFixed(4)}, {currentPosition[1].toFixed(4)}
+                  </span>
+                </div>
+
+                {incidentReport.error && (
+                  <div className="modal-error">{incidentReport.error}</div>
+                )}
+
+                <button
+                  className="modal-submit-btn"
+                  disabled={incidentReport.status === "submitting"}
+                  onClick={() =>
+                    incidentReport.submitIncident({
+                      type: incidentType,
+                      description: incidentDesc,
+                      lat: currentPosition[0],
+                      lng: currentPosition[1],
+                    })
+                  }
+                >
+                  {incidentReport.status === "submitting" && "Submitting…"}
+                  {(incidentReport.status === "idle" || incidentReport.status === "error") && "Submit Report"}
+                </button>
+
+                <p className="modal-chain-note">
+                  Zero personal data collected
+                </p>
+              </>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 }

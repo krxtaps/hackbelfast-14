@@ -396,13 +396,22 @@ class PathfindingService:
                 },
             }
 
-        # Dijkstra's Algorithm
-        # priority_queue stores (cumulative_cost, current_node, path_taken)
-        pq = [(0.0, start_node, [start_node])]
+        # A* Algorithm
+        # f = g + h  where:
+        #   g = cumulative safety-weighted cost so far
+        #   h = admissible heuristic — straight-line haversine distance to goal
+        #       (always ≤ true remaining cost, so A* stays optimal)
+        # priority_queue stores (f_cost, g_cost, current_node, path_taken)
+        def heuristic(node: Tuple[float, float]) -> float:
+            return haversine_m(node[0], node[1], end_node[0], end_node[1])
+
+        g_start = 0.0
+        pq = [(g_start + heuristic(start_node), g_start, start_node, [start_node])]
+        # visited maps node → best g_cost seen so far
         visited: Dict[Tuple[float, float], float] = {start_node: 0.0}
 
         while pq:
-            (current_cost, current_node, path) = heapq.heappop(pq)
+            (_, current_cost, current_node, path) = heapq.heappop(pq)
 
             if current_node == end_node:
                 total_distance = 0.0
@@ -470,18 +479,20 @@ class PathfindingService:
                     "path_points": path_points,
                     "route_segments": route_segments,
                     "safety_optimized": True,
+                    "algorithm": "a_star",
                 }
 
             if current_cost > visited.get(current_node, float('inf')):
                 continue
 
             for neighbor, weight, metadata in self.graph.get(current_node, []):
-                new_cost = current_cost + weight
-                
-                if new_cost < visited.get(neighbor, float('inf')):
-                    visited[neighbor] = new_cost
+                new_g = current_cost + weight
+
+                if new_g < visited.get(neighbor, float('inf')):
+                    visited[neighbor] = new_g
                     new_path = path + [neighbor]
-                    heapq.heappush(pq, (new_cost, neighbor, new_path))
+                    f = new_g + heuristic(neighbor)
+                    heapq.heappush(pq, (f, new_g, neighbor, new_path))
 
         return {"error": "No safe path found connecting the requested points."}
 
