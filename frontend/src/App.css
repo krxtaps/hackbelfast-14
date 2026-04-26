@@ -1,0 +1,809 @@
+/* ── Global ──────────────────────────────────────────────────────────────── */
+
+:root {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+}
+
+/* ── Skip link (accessibility) ──────────────────────────────────────────── */
+
+.skip-link {
+  position: absolute;
+  left: 0.75rem;
+  top: -60px;
+  z-index: 9999;
+  background: #0f172a;
+  color: #fff;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.875rem;
+}
+
+.skip-link:focus {
+  top: 0.75rem;
+}
+
+/* ── Shell layout ───────────────────────────────────────────────────────── */
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 58fr 42fr;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+/* ── Map ─────────────────────────────────────────────────────────────────── */
+
+.map-section {
+  position: relative;
+  height: 100vh;
+}
+
+.fullmap {
+  height: 100%;
+  width: 100%;
+}
+
+/* ── Map legend overlay ─────────────────────────────────────────────────── */
+
+.map-legend {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1rem;
+  z-index: 900;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: 14px;
+  padding: 0.7rem 0.85rem;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.18);
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  font-size: 0.78rem;
+  min-width: 130px;
+}
+
+.legend-title {
+  font-weight: 700;
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748b;
+  margin: 0 0 0.35rem;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.25rem;
+  color: #334155;
+}
+
+.legend-swatch {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+.legend-divider {
+  border: none;
+  border-top: 1px solid #e2e8f0;
+  margin: 0.45rem 0;
+}
+
+/* ── Panel ───────────────────────────────────────────────────────────────── */
+
+.panel-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: #f8fafc;
+  overflow: hidden;
+}
+
+/* ── Panel header ───────────────────────────────────────────────────────── */
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.1rem 0.8rem;
+  background: #fff;
+  border-bottom: 1px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.panel-title-col {
+  min-width: 0;
+}
+
+.app-title {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #0f172a;
+}
+
+.app-subtitle {
+  margin: 0.1rem 0 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.panel-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* ── Risk pill ──────────────────────────────────────────────────────────── */
+
+.risk-pill {
+  border-radius: 999px;
+  padding: 0.3rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+.risk-low {
+  background: #ecfdf5;
+  color: #15803d;
+  border-color: #86efac;
+}
+
+.risk-medium {
+  background: #fffbeb;
+  color: #92400e;
+  border-color: #fcd34d;
+}
+
+.risk-high {
+  background: #fef2f2;
+  color: #991b1b;
+  border-color: #fca5a5;
+}
+
+/* ── SOS button ─────────────────────────────────────────────────────────── */
+
+.sos-btn {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5);
+  animation: sos-pulse 2.4s infinite;
+  transition: transform 0.1s;
+}
+
+.sos-btn:hover {
+  background: #b91c1c;
+  transform: scale(1.04);
+}
+
+.sos-btn:disabled {
+  opacity: 0.55;
+  animation: none;
+  cursor: not-allowed;
+}
+
+@keyframes sos-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* ── State banners ──────────────────────────────────────────────────────── */
+
+.state-banner {
+  padding: 0.5rem 1.1rem;
+  font-size: 0.82rem;
+  flex-shrink: 0;
+}
+
+.state-banner.warning {
+  background: #fffbeb;
+  color: #92400e;
+  border-bottom: 1px solid #fcd34d;
+}
+
+.state-banner.error {
+  background: #fef2f2;
+  color: #991b1b;
+  border-bottom: 1px solid #fca5a5;
+}
+
+/* ── Custom tab ─────────────────────────────────────────────────────────── */
+
+.tab-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 0;
+}
+
+.custom-tab-header {
+  display: flex;
+  background: #fff;
+  border-bottom: 2px solid #e2e8f0;
+  flex-shrink: 0;
+}
+
+.custom-tab-btn {
+  flex: 1;
+  padding: 0.65rem 0.5rem;
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -2px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 0.15s, border-color 0.15s;
+  white-space: nowrap;
+}
+
+.custom-tab-btn:hover {
+  color: #0f172a;
+}
+
+.custom-tab-btn.active {
+  color: #dc2626;
+  border-bottom-color: #dc2626;
+}
+
+.custom-tab-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #f8fafc;
+}
+
+/* ── Tab panel wrapper ──────────────────────────────────────────────────── */
+
+.tab-panel {
+  padding: 1rem 1rem 2rem;
+}
+
+/* ── Quick action buttons ───────────────────────────────────────────────── */
+
+.quick-action-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.55rem;
+  margin-bottom: 1rem;
+}
+
+.action-btn {
+  width: 100% !important;
+  min-height: 44px !important;
+  border-radius: 12px !important;
+  font-size: 0.82rem !important;
+  font-weight: 600 !important;
+}
+
+/* ── Filter chips ───────────────────────────────────────────────────────── */
+
+.filter-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.85rem;
+}
+
+.filter-label {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.filter-chips {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.filter-chip {
+  border: 1px solid #cbd5e1;
+  border-radius: 999px;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+  background: #fff;
+  color: #64748b;
+}
+
+.chip-off {
+  opacity: 0.55;
+}
+
+.chip-on {
+  opacity: 1;
+}
+
+.filter-chip:hover {
+  opacity: 1;
+}
+
+/* ── Location status row ────────────────────────────────────────────────── */
+
+.loc-status-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.loc-status-text {
+  font-size: 0.8rem;
+  color: #0369a1;
+  flex: 1;
+}
+
+/* ── Section headings ───────────────────────────────────────────────────── */
+
+.section-heading {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin: 0 0 0.6rem;
+}
+
+/* ── Syncfusion Accordion overrides ─────────────────────────────────────── */
+
+.e-accordion .e-acrdn-header-content {
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+.e-accordion .e-acrdn-content {
+  padding: 0;
+}
+
+/* ── Location detail (inside accordion) ─────────────────────────────────── */
+
+.location-detail {
+  padding: 0.75rem 1rem 1rem;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+}
+
+.loc-meta-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.loc-type-chip {
+  border-radius: 999px;
+  padding: 0.22rem 0.6rem;
+  font-size: 0.74rem;
+  font-weight: 700;
+}
+
+.loc-dist-badge {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.loc-line {
+  margin: 0 0 0.3rem;
+  font-size: 0.82rem;
+  color: #475569;
+  line-height: 1.4;
+}
+
+.services-label {
+  margin: 0.55rem 0 0.25rem;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.services-list {
+  margin: 0 0 0.6rem 1rem;
+  padding: 0;
+  font-size: 0.8rem;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.expect-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 10px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.8rem;
+  color: #1e40af;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+}
+
+.route-here-btn {
+  border-radius: 8px !important;
+}
+
+/* ── Route tab ──────────────────────────────────────────────────────────── */
+
+.empty-state {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: #64748b;
+}
+
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.empty-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #334155;
+  margin: 0 0 0.35rem;
+}
+
+.empty-sub {
+  font-size: 0.85rem;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.route-summary-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+.route-dest-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.4rem;
+}
+
+.route-dist {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #0369a1;
+}
+
+.route-dest-name {
+  margin: 0 0 0.3rem;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.route-meta {
+  margin: 0 0 0.3rem;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.route-address {
+  margin: 0 0 0.75rem;
+  font-size: 0.8rem;
+  color: #475569;
+}
+
+.route-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.voice-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.voice-note {
+  margin: 0;
+  font-size: 0.73rem;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* ── Safety score card ──────────────────────────────────────────────────── */
+
+.score-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+.score-hero-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.score-big {
+  font-size: 2.8rem;
+  font-weight: 900;
+  line-height: 1;
+  color: #0f172a;
+}
+
+.score-label {
+  font-size: 1rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.score-grade {
+  border-radius: 10px;
+  padding: 0.25rem 0.65rem;
+  font-size: 1rem;
+  font-weight: 900;
+  margin-left: auto;
+}
+
+.breakdown-list {
+  margin-top: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.breakdown-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.breakdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.breakdown-label {
+  font-size: 0.78rem;
+  color: #475569;
+  font-weight: 600;
+}
+
+.breakdown-val {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+/* ── Tips card ──────────────────────────────────────────────────────────── */
+
+.tips-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.06);
+}
+
+.tips-list {
+  margin: 0.25rem 0 0 1rem;
+  padding: 0;
+  font-size: 0.83rem;
+  color: #334155;
+  line-height: 1.9;
+}
+
+/* ── Safety data tab ────────────────────────────────────────────────────── */
+
+.advisory-card {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 12px;
+  padding: 0.65rem 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.advisory-text {
+  margin: 0;
+  font-size: 0.82rem;
+  color: #1e40af;
+  line-height: 1.5;
+}
+
+.area-block {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+  box-shadow: 0 1px 6px rgba(15, 23, 42, 0.04);
+  transition: border-color 0.2s;
+}
+
+.area-nearest {
+  border-color: #93c5fd;
+  box-shadow: 0 0 0 2px #bfdbfe;
+}
+
+.area-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.area-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.you-are-here {
+  font-size: 0.9rem;
+}
+
+.you-badge {
+  font-size: 0.7rem;
+  font-weight: 600;
+  background: #eff6ff;
+  color: #1d4ed8;
+  border-radius: 999px;
+  padding: 0.1rem 0.45rem;
+  margin-left: 0.3rem;
+}
+
+.area-score-chip {
+  border-radius: 999px;
+  padding: 0.2rem 0.55rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+}
+
+.area-metrics-row {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  font-size: 0.74rem;
+  color: #64748b;
+  flex-wrap: wrap;
+}
+
+/* ── Street risk list ───────────────────────────────────────────────────── */
+
+.street-risk-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.street-risk-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.street-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.street-name {
+  flex: 1;
+  color: #334155;
+  font-weight: 600;
+}
+
+.risk-chip {
+  border-radius: 999px;
+  padding: 0.18rem 0.5rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+/* ── Shared small note ──────────────────────────────────────────────────── */
+
+.small-note {
+  margin: 0.5rem 0 0;
+  font-size: 0.74rem;
+  color: #94a3b8;
+}
+
+/* ── Focus styles ───────────────────────────────────────────────────────── */
+
+button:focus-visible,
+a:focus-visible,
+.e-btn:focus-visible {
+  outline: 3px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* ── Responsive: mobile ─────────────────────────────────────────────────── */
+
+@media (max-width: 820px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+    grid-template-rows: 42vh 58vh;
+  }
+
+  .map-section {
+    height: 42vh;
+  }
+
+  .panel-section {
+    height: 58vh;
+  }
+
+  .quick-action-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .score-big {
+    font-size: 2rem;
+  }
+}
+
+/* ── Reduced motion ─────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .sos-btn {
+    animation: none;
+  }
+}
